@@ -8,11 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      fontSize: {
+        titleClamp: 'clamp(2.25rem, 2.0357rem + 1.0714vw, 3rem)',
+        spanClamp: 'clamp(1.5rem, 1.2857rem + 1.0714vw, 2.25rem)'
+      }
     },
   },
   plugins: [],
