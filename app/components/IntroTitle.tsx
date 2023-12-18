@@ -6,11 +6,10 @@ export default function IntroTitle() {
     <div className="leading-tight">
       <span className="text-spanClamp">{firstPhraseArr}</span>
       <h1
-        className="font-bold text-titleClamp relative cursor-default"
+        className="font-bold text-titleClamp relative cursor-default text-transparent"
         data-text="Maik Emanoel"
         style={{
-          WebkitTextStroke: "1px rgb(241 245 249)",
-          color: "transparent",
+          WebkitTextStroke: "1px #2F84FF",
         }}
       >
         Maik Emanoel
@@ -24,7 +23,7 @@ const firstPhraseArr = firstPhrase.split("").map((letter, i) => {
   return (
     <span
       key={i}
-      className="hover:animate-rubberband hover:text-[#f4a949] inline-block"
+      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
     >
       {letter}
     </span>
@@ -35,7 +34,7 @@ const secondPhraseArr = secondPhrase.split("").map((letter, i) => {
   return (
     <span
       key={i}
-      className="hover:animate-rubberband hover:text-[#f4a949] inline-block"
+      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
     >
       {letter}
     </span>
