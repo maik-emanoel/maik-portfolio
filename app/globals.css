@@ -10,11 +10,11 @@
     top: 0;
     left: 0;
     height: 100%;
-    color: #f1f5f9;
+    color: #2F84FF;
     overflow: hidden;
     white-space: nowrap;
-    -webkit-text-stroke: 0px #f1f5f9;
-    animation: slide 6s alternate forwards;
+    -webkit-text-stroke: 0px #2F84FF;
+    animation: slide 10s 3s forwards;
   }
 
   @keyframes slide {
