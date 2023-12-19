@@ -13,6 +13,7 @@
     color: #2F84FF;
     overflow: hidden;
     white-space: nowrap;
+    text-shadow: 0px 0px 5px #03142b;
     -webkit-text-stroke: 0px #2F84FF;
     animation: slide 10s 3s forwards;
   }
