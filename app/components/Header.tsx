@@ -16,10 +16,11 @@ export default function Header() {
       />
 
       <div className="flex items-center gap-2">
-        <span className="text-xs mt-auto text-slate-300 flex items-center gap-1">
+        <div className="text-xs text-slate-300 flex items-center gap-1">
           <span className="block rounded-full w-1 h-1 bg-emerald-500"></span>
           {hour}h{minutes.toString().padStart(2, '0')}
-        </span>
+        </div>
+        <span className="h-6 w-[1px] bg-slate-500"></span>
         <div>
           <Image src="/brazil-flag.png" alt="Bandeira do Brasil" width={64} height={64} className="h-7 w-7"/>
         </div>
