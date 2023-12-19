@@ -1,6 +1,8 @@
+import { DownloadSimple, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import Header from "../components/Header";
 import IntroTitle from "../components/IntroTitle";
 import Image from "next/image";
+import { Icon } from "@phosphor-icons/react/dist/lib/index";
 
 export default function Home() {
   return (
@@ -8,7 +10,23 @@ export default function Home() {
       <Header />
 
       <main className="flex-1 max-h-[500px] flex items-center justify-between">
-        <IntroTitle />
+        <div>
+          <IntroTitle />
+
+          <div className="mt-4 flex items-center gap-2">
+            <LinkButton
+              icon={DownloadSimple}
+              text="Download CV"
+              path="/curriculo-maik-dev.pdf"
+              isDownloadButton
+            />
+            <LinkButton
+              icon={GithubLogo}
+              text="Github"
+              path="https://github.com/maik-emanoel"
+            />
+          </div>
+        </div>
         <div className="w-[300px] h-[300px] p-3 rounded-full relative">
           <Image
             src="/profile-photo.jpg"
@@ -23,5 +41,33 @@ export default function Home() {
         </div>
       </main>
     </div>
+  );
+}
+
+interface LinkButtonsProps {
+  icon: Icon;
+  text: string;
+  path: string;
+  isDownloadButton?: boolean;
+}
+
+function LinkButton({
+  icon: Icon,
+  text,
+  path,
+  isDownloadButton,
+}: LinkButtonsProps) {
+  return (
+    <a
+      className="h-10 w-10 max-w-[150px] rounded-full border border-[#2F84FF] flex items-center gap-2 px-[10px] hover:w-full group transition-[width] duration-500 overflow-hidden cursor-pointer"
+      href={path}
+      download={isDownloadButton && "cv-maikemanoel"}
+      target="_blank"
+    >
+      <Icon size={20} className="flex-shrink-0" />
+      <span className="text-[0px] opacity-0 group-hover:opacity-100 group-hover:text-sm whitespace-nowrap transition-all duration-300">
+        {text}
+      </span>
+    </a>
   );
 }
