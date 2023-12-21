@@ -14,7 +14,8 @@ const config: Config = {
       },
       animation: {
         rubberband: "rubberband 1s alternate ease-out",
-        'spin-slow': 'spin 12s linear infinite'
+        "spin-slow": "spin 12s linear infinite",
+        slide: 'slide 20s linear infinite'
       },
       keyframes: {
         rubberband: {
@@ -40,6 +41,11 @@ const config: Config = {
             transform: "scaleX(1) scaleY(1)",
           },
         },
+
+        slide: {
+          from: { transform: 'translateX(0)'},
+          to: { transform: 'translateX(-100%)'}
+        }
       },
     },
   },
