@@ -15,7 +15,8 @@ const config: Config = {
       animation: {
         rubberband: "rubberband 1s alternate ease-out",
         "spin-slow": "spin 12s linear infinite",
-        slide: 'slide 20s linear infinite'
+        slide: "slide 20s linear infinite",
+        fromLeft: "fromLeft .3s forwards",
       },
       keyframes: {
         rubberband: {
@@ -43,9 +44,13 @@ const config: Config = {
         },
 
         slide: {
-          from: { transform: 'translateX(0)'},
-          to: { transform: 'translateX(-100%)'}
-        }
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+
+        fromLeft: {
+          "0%": { left: '50%', opacity: ".3" },
+        },
       },
     },
   },
