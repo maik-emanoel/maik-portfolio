@@ -29,4 +29,9 @@
   .animation-paused {
     animation-play-state: paused;
   }
+
+  .logos-slide:has(.logo:hover) .logo:not(:hover) {
+    opacity: .3;
+    scale: .95;
+  }
 }
