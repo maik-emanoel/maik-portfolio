@@ -53,7 +53,7 @@ export default function FloatingNavbar() {
   });
 
   return (
-    <div className="flex items-center gap-3 fixed bottom-8 left-1/2 -translate-x-1/2 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-slate-800/25" 
+    <div className="flex items-center gap-3 fixed bottom-8 left-1/2 -translate-x-1/2 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-slate-800/25 z-50" 
     style={{
       boxShadow: '#00000040 0px 3px 8px'
     }}>
