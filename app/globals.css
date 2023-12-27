@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --text-primary-color: #f1f5f9;
+  }
+
   h1::before {
     content: attr(data-text);
     position: absolute;
@@ -33,5 +37,23 @@
   .logos-slide:has(.logo:hover) .logo:not(:hover) {
     opacity: .3;
     scale: .95;
+  }
+
+  .bullet {
+    width: 8px;
+    height: 8px;
+    background: var(--text-primary-color);
+    display: inline-block;
+    margin-inline: 4px;
+    border-radius: 100%;
+    cursor: pointer;
+    opacity: .3;
+    transition: scale .3s;
+  }
+
+  .bullet-active {
+    background: var(--text-primary-color);
+    opacity: .9;
+    scale: 1.5;
   }
 }
