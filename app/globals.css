@@ -22,6 +22,10 @@
     animation: fill 10s 3s forwards;
   }
 
+  input, textarea {
+    background: transparent;
+  }
+
   @keyframes fill {
     to {
       width: 100%;
