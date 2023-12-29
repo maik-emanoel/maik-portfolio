@@ -11,7 +11,7 @@ export default function ProjectCard({ repoInfos }: any) {
     <div className="flex justify-between items-center gap-8 max-h-[440px] h-screen w-full pb-20">
       <div className="flex flex-col flex-1 max-w-[400px] h-full">
         <h3
-          className="text-5xl leading-tight font-medium overflow-hidden text-ellipsis whitespace-nowrap first-letter:uppercase"
+          className="text-4xl leading-tight font-medium overflow-hidden text-ellipsis whitespace-nowrap first-letter:uppercase"
           title={repoInfos.name}
         >
           {formattedTitle}
@@ -20,7 +20,7 @@ export default function ProjectCard({ repoInfos }: any) {
         <div className="">
           <p className="text-slate-400 my-6">{repoInfos.description}</p>
 
-          <h4 className="mb-3">Technologies & libs:</h4>
+          <h4 className="mb-3 text-slate-400">Technologies & libs:</h4>
 
           {topicsWithoutMk.map((topic: string) => {
             return (
@@ -34,7 +34,7 @@ export default function ProjectCard({ repoInfos }: any) {
           })}
         </div>
 
-        <div className="mt-auto flex flex-col gap-1 pb-2 w-fit">
+        <div className="mt-auto flex flex-col gap-1 pb-4 w-fit">
           <a
             href={repoInfos.html_url}
             target="_blank"
@@ -61,8 +61,9 @@ export default function ProjectCard({ repoInfos }: any) {
           alt=""
           width={2880}
           height={1800}
-          className="aspect-video rounded-lg object-cover"
+          className="aspect-video rounded-lg"
           unoptimized
+          onLoad={() => console.log('Image loaded')}
         />
       </div>
     </div>
