@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, WheelEvent } from "react";
+import { useState, useEffect } from "react";
 import { Moon, Sun } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
