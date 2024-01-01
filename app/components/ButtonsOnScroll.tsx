@@ -22,7 +22,7 @@ export default function ButtonsOnScroll() {
       <HeaderButtons
         className={`fixed ${
           isScrollDown ? "top-4 translate-y-0" : "top-0 -translate-y-full opacity-30"
-        } right-[24px] border border-slate-500 py-2 px-3 rounded-full backdrop-blur-lg z-50 transition-transform duration-300`}
+        } right-[24px] border border-slate-500 py-2 px-3 rounded-full bg-slate-900/5 backdrop-blur-lg z-50 transition-transform duration-300`}
       />
     </>
   );
