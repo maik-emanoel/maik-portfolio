@@ -17,6 +17,7 @@ const config: Config = {
         "spin-slow": "spin 12s linear infinite",
         slide: "slide 20s linear infinite",
         fromLeft: "fromLeft .3s forwards",
+        toastProgress: "toastProgress 5s .3s forwards linear"
       },
       keyframes: {
         rubberband: {
@@ -49,7 +50,11 @@ const config: Config = {
         },
 
         fromLeft: {
-          "0%": { left: '50%', opacity: ".3" },
+          "0%": { left: "50%", opacity: ".3" },
+        },
+
+        toastProgress: {
+          "100%": { right: "100%" },
         },
       },
     },
