@@ -17,9 +17,9 @@
     color: #2F84FF;
     overflow: hidden;
     white-space: nowrap;
-    text-shadow: 0px 0px 5px #03142b;
+    text-shadow: 0px 0px 5px #3e3ba4;
     -webkit-text-stroke: 0px #2F84FF;
-    animation: fill 10s 3s forwards;
+    animation: fill 8s 3s forwards;
   }
 
   input, textarea {
