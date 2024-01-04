@@ -33,8 +33,6 @@ export default function FloatingNavbar() {
       const clientHeight = document.documentElement.clientHeight;
       const scrollHeight = document.documentElement.scrollHeight;
 
-      console.log(scrollTop, clientHeight, scrollHeight);
-
       if (scrollTop + clientHeight + 50 >= scrollHeight) {
         setIsBottom(true);
       } else {
@@ -73,7 +71,8 @@ export default function FloatingNavbar() {
 
   return (
     <div
-      className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-slate-800/25 z-50"
+      data-isbottom={isBottom}
+      className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-slate-800/25 z-50 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-slate-100 group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200"
       style={{
         boxShadow: "#00000040 0px 3px 8px",
       }}
@@ -81,7 +80,7 @@ export default function FloatingNavbar() {
       {!isBottom ? (
         tabsComponents
       ) : (
-        <a href="#home" className="py-2">
+        <a href="#home" className="p-3 group-hover:text-black">
           <ArrowUp size={20} />
         </a>
       )}
