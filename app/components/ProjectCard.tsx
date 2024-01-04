@@ -58,12 +58,11 @@ export default function ProjectCard({ repoInfos }: any) {
         <Image
           key={repoInfos.name}
           src={repoInfos.imageUrl}
-          alt=""
+          alt="Preview"
           width={2880}
           height={1800}
-          className="aspect-video rounded-lg"
+          className="aspect-video rounded-lg shadow-md"
           unoptimized
-          onLoad={() => console.log('Image loaded')}
         />
       </div>
     </div>
