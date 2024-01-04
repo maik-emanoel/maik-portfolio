@@ -1,6 +1,6 @@
 "use client";
 
-import { FaHtml5 as htmlLogo, FaReact as reactLogo } from "react-icons/fa";
+import { FaHtml5 as htmlLogo, FaReact as reactLogo, FaGitAlt as gitLogo } from "react-icons/fa";
 import {
   IoLogoCss3 as cssLogo,
   IoLogoGithub as githubLogo,
@@ -49,6 +49,10 @@ const logos = [
     name: "Github",
   },
   {
+    image: gitLogo,
+    name: 'Git'
+  },
+  {
     image: vscodeLogo,
     name: "Visual Code",
   },
@@ -63,7 +67,7 @@ const after =
 export default function InfiniteSlider() {
   return (
     <div
-      className={`overflow-hidden py-2 whitespace-nowrap text-slate-300 group relative ${before} ${after} slider logos-slide`}
+      className={`overflow-hidden py-2 whitespace-nowrap text-slate-300 group relative slider logos-slide`}
     >
       <LogosSlide />
       <LogosSlide />
