@@ -27,6 +27,7 @@ export default function Home() {
             />
           </div>
         </div>
+        
         <div className="w-[300px] h-[300px] p-3 rounded-full relative overflow-hidden">
           <Image
             src="/profile-photo.jpg"
@@ -34,7 +35,7 @@ export default function Home() {
             height={2048}
             alt="Foto de perfil de Maik Emanoel"
             priority
-            className="w-full h-full border rounded-full object-cover object-top"
+            className="w-full h-full rounded-full object-cover object-top"
           />
 
           <div className="absolute inset-0 border rounded-full border-r-transparent border-l-transparent animate-spin-slow"></div>
