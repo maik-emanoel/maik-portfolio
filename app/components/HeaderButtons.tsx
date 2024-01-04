@@ -32,7 +32,7 @@ export default function HeaderButtons({ className }: HeaderButtonsProps) {
       <span className="h-6 w-[1px] bg-slate-500"></span>
       <div>
         <Image
-          src="/brazil-flag.png"
+          src="/eua-flag.png"
           alt="Bandeira do Brasil"
           width={64}
           height={64}
