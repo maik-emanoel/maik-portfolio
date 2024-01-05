@@ -8,7 +8,7 @@ import { Pagination } from "swiper/modules";
 
 export default function ProjectsContent({ reposWithImage }: any) {
   return (
-    <div className="mt-11">
+    <div className="mt-11 sm:mt-4">
       <Swiper
         spaceBetween={50}
         slidesPerView={1}

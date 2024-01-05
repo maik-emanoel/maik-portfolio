@@ -1,4 +1,4 @@
-import { DownloadSimple, GithubLogo } from "@phosphor-icons/react/dist/ssr";
+import { CaretDown, DownloadSimple, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import Header from "../components/Header";
 import IntroTitle from "../components/IntroTitle";
 import Image from "next/image";
@@ -6,10 +6,10 @@ import { Icon } from "@phosphor-icons/react/dist/lib/index";
 
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col" id="home">
+    <div className="h-screen max-h-[768px] flex flex-col relative sm:h-screen-mobile" id="home">
       <Header />
 
-      <main className="flex-1 max-h-[500px] flex items-center justify-between">
+      <main className="flex-1 max-h-[500px] flex items-center justify-between md:flex-col-reverse md:justify-center md:gap-6">
         <div>
           <IntroTitle />
 
@@ -28,7 +28,7 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="w-[300px] h-[300px] p-3 rounded-full relative overflow-hidden">
+        <div className="w-[300px] h-[300px] p-3 rounded-full relative overflow-hidden md:w-52 md:h-52">
           <Image
             src="/profile-photo.jpg"
             width={1536}
@@ -40,6 +40,8 @@ export default function Home() {
 
           <div className="absolute inset-0 border rounded-full border-r-transparent border-l-transparent animate-spin-slow"></div>
         </div>
+
+        <CaretDown className="hidden sm:block absolute left-1/2 -translate-x-[50%] bottom-[15%] animate-scrollBounce"/>
       </main>
     </div>
   );

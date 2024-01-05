@@ -40,7 +40,7 @@ export default async function Projects() {
   );
 
   return (
-    <Section title="Projects" id="projects">
+    <Section title="Projects" id="projects" className="sm:h-svh">
       <ProjectsContent reposWithImage={reposWithImage} />
     </Section>
   );

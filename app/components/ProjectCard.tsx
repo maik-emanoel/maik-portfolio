@@ -8,10 +8,10 @@ export default function ProjectCard({ repoInfos }: any) {
   );
 
   return (
-    <div className="flex justify-between items-center gap-8 max-h-[440px] h-screen w-full pb-20">
-      <div className="flex flex-col flex-1 max-w-[400px] h-full">
+    <div className="flex justify-between items-center gap-8 max-h-[440px] h-screen w-full pb-20 md:flex-col-reverse md:max-h-none md:items-start md:gap-4 md:h-fit md:pb-10">
+      <div className="flex flex-col flex-1 max-w-[400px] h-full md:max-w-none">
         <h3
-          className="text-4xl leading-tight font-medium overflow-hidden text-ellipsis whitespace-nowrap first-letter:uppercase"
+          className="text-4xl leading-tight font-medium overflow-hidden text-ellipsis whitespace-nowrap first-letter:uppercase md:text-2xl"
           title={repoInfos.name}
         >
           {formattedTitle}
@@ -34,7 +34,7 @@ export default function ProjectCard({ repoInfos }: any) {
           })}
         </div>
 
-        <div className="mt-auto flex flex-col gap-1 pb-4 w-fit">
+        <div className="mt-auto flex flex-col gap-1 pb-4 w-fit md:mt-8">
           <a
             href={repoInfos.html_url}
             target="_blank"

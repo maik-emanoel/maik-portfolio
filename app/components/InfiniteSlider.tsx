@@ -82,9 +82,9 @@ function LogosSlide() {
         return (
           <div
             key={logo.name}
-            className="inline-block mx-8 hover:bg-slate-200 hover:text-slate-900 py-2 px-2 rounded-lg cursor-pointer relative group/logo transition-[scale,_opacity] logo"
+            className="inline-block mx-8 hover:bg-slate-200 hover:text-slate-900 py-2 px-2 rounded-lg cursor-pointer relative group/logo transition-[scale,_opacity] logo sm:mx-6"
           >
-            <logo.image className="w-8 h-8" />
+            <logo.image className="w-8 h-8 sm:w-6 sm:h-6" />
 
             <div className="hidden absolute left-full top-1/2 -translate-y-1/2 ml-2 py-1 px-3 bg-slate-200 text-slate-900 text-sm font-medium z-50 rounded-md group-hover/logo:block animate-fromLeft">
               {logo.name}

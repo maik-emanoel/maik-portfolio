@@ -8,10 +8,10 @@ import { IconProps } from "@phosphor-icons/react";
 
 export default function Footer() {
   return (
-    <footer className="relative max-w-[1000px] bottom-8 mx-auto px-5 flex justify-between items-center text-slate-400">
+    <footer className="relative max-w-[1000px] bottom-8 mx-auto px-5 flex justify-between items-center text-slate-400 xs:bottom-4">
       <p className="text-xs">Created by Maik Emanoel</p>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 xs:gap-2">
         <SocialLink
           path="https://github.com/maik-emanoel"
           icon={GithubLogo}
