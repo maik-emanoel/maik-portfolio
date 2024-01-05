@@ -17,7 +17,8 @@ const config: Config = {
         "spin-slow": "spin 12s linear infinite",
         slide: "slide 20s linear infinite",
         fromLeft: "fromLeft .3s forwards",
-        toastProgress: "toastProgress 5s .3s forwards linear"
+        toastProgress: "toastProgress 5s .3s forwards linear",
+        scrollBounce: "scrollBounce .8s linear infinite alternate",
       },
       keyframes: {
         rubberband: {
@@ -56,6 +57,28 @@ const config: Config = {
         toastProgress: {
           "100%": { right: "100%" },
         },
+        scrollBounce: {
+          "100%": { bottom: "14.5%" },
+        },
+      },
+      screens: {
+        "2xl": { max: "1535px" },
+        // => @media (max-width: 1535px) { ... }
+
+        xl: { max: "1279px" },
+        // => @media (max-width: 1279px) { ... }
+
+        lg: { max: "1023px" },
+        // => @media (max-width: 1023px) { ... }
+
+        md: { max: "768px" },
+        // => @media (max-width: 768px) { ... }
+
+        sm: { max: "475px" },
+        // => @media (max-width: 475px) { ... }
+        
+        xs: { max: "375px" },
+        // => @media (max-width: 375px) { ... }
       },
     },
   },
