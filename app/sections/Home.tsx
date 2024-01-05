@@ -1,6 +1,6 @@
 import { CaretDown, DownloadSimple, GithubLogo } from "@phosphor-icons/react/dist/ssr";
-import Header from "../components/Header";
-import IntroTitle from "../components/IntroTitle";
+import Header from "../components/home/Header";
+import IntroTitle from "../components/home/IntroTitle";
 import Image from "next/image";
 import { Icon } from "@phosphor-icons/react/dist/lib/index";
 

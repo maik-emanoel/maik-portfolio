@@ -1,4 +1,4 @@
-import InfiniteSlider from "../components/InfiniteSlider";
+import InfiniteSlider from "../components/about/InfiniteSlider";
 import Section from "../components/Section";
 
 export default function About() {

@@ -1,4 +1,4 @@
-import ProjectsContent from "../components/ProjectsContent";
+import ProjectsContent from "../components/projects/ProjectsContent";
 import Section from "../components/Section";
 
 export default async function Projects() {

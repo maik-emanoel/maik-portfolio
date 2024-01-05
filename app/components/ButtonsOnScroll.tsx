@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import HeaderButtons from "./HeaderButtons";
+import HeaderButtons from "./home/HeaderButtons";
 
 export default function ButtonsOnScroll() {
   const [scrollValue, setScrollValue] = useState(0);
