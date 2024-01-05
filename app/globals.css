@@ -34,6 +34,10 @@
 }
 
 @layer utilities {
+  .h-screen-mobile {
+    height: calc(100dvh - 40px);
+  }
+
   .animation-paused {
     animation-play-state: paused;
   }
