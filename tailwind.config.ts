@@ -6,6 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontSize: {
@@ -76,7 +77,7 @@ const config: Config = {
 
         sm: { max: "475px" },
         // => @media (max-width: 475px) { ... }
-        
+
         xs: { max: "375px" },
         // => @media (max-width: 375px) { ... }
       },
