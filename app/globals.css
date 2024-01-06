@@ -4,7 +4,22 @@
 
 @layer base {
   :root {
-    --text-primary-color: #f1f5f9;
+    --primary: 255 17 255;
+    --secondary: 255 255 255;
+    --muted: 34 255 136;
+    --blue-primary: 265 0 0;
+    --blue-secondary: 47 132 52;
+    --blue-topic: 34 255 34;
+  }
+
+  html.dark {
+    --primary: 241 245 249;
+    --secondary: 203 213 225;
+    --muted: 148 163 184;
+    --background: 15 23 42;
+    --blue-primary: 47 132 255;
+    --blue-secondary: 96 165 250;
+    --blue-topic: 30 58 138;
   }
 
   h1::before {
@@ -50,7 +65,7 @@
   .bullet {
     width: 8px;
     height: 8px;
-    background: var(--text-primary-color);
+    background: var(--primary);
     display: inline-block;
     margin-inline: 4px;
     border-radius: 100%;
@@ -60,7 +75,7 @@
   }
 
   .bullet-active {
-    background: var(--text-primary-color);
+    background: var(--primary);
     opacity: .9;
     scale: 1.5;
   }
