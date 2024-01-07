@@ -81,6 +81,18 @@ const config: Config = {
         xs: { max: "375px" },
         // => @media (max-width: 375px) { ... }
       },
+      colors: {
+        primary: "rgb(var(--primary) / <alpha-value>)", // slate-100
+        secondary: "rgb(var(--secondary) / <alpha-value>)", // slate-300
+        muted: "rgb(var(--muted) / <alpha-value>)", // slate-400
+        background: "rgb(var(--background) / <alpha-value>)", // slate-900
+
+        blue: {
+          primary: "rgb(var(--blue-primary) / <alpha-value>)",
+          secondary: "rgb(var(--blue-secondary) / <alpha-value>)", // blue-400
+          topic: "rgb(var(--blue-topic) / <alpha-value>)", // blue-900
+        },
+      },
     },
   },
   plugins: [],
