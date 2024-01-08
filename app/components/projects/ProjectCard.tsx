@@ -18,15 +18,15 @@ export default function ProjectCard({ repoInfos }: any) {
         </h3>
 
         <div className="">
-          <p className="text-slate-400 my-6">{repoInfos.description}</p>
+          <p className="text-muted my-6">{repoInfos.description}</p>
 
-          <h4 className="mb-3 text-slate-400">Technologies & libs:</h4>
+          <h4 className="mb-3 text-muted">Technologies & libs:</h4>
 
           {topicsWithoutMk.map((topic: string) => {
             return (
               <span
                 key={topic}
-                className="bg-blue-900 py-1 px-3 rounded-full text-sm font-medium inline-block mr-1 mb-2"
+                className="bg-blue-topic py-1 px-3 rounded-full text-sm font-medium inline-block mr-1 mb-2"
               >
                 {topic}
               </span>
@@ -46,7 +46,7 @@ export default function ProjectCard({ repoInfos }: any) {
           <a
             href={repoInfos.homepage}
             target="_blank"
-            className="flex items-center gap-1 text-blue-400 group"
+            className="flex items-center gap-1 text-blue-secondary group"
           >
             Visit the app
             <CaretRight weight="bold" className="mt-[2px] transition-transform duration-300 group-hover:translate-x-1" />

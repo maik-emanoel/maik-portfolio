@@ -62,7 +62,7 @@ function LinkButton({
 }: LinkButtonsProps) {
   return (
     <a
-      className="h-10 w-10 max-w-[150px] rounded-full border border-[#2F84FF] flex items-center gap-2 px-[10px] hover:w-full group transition-[width] duration-500 overflow-hidden cursor-pointer"
+      className="h-10 w-10 max-w-[150px] rounded-full border border-blue-primary flex items-center gap-2 px-[10px] hover:w-full group transition-[width] duration-500 overflow-hidden cursor-pointer"
       href={path}
       download={isDownloadButton && "cv-maikemanoel"}
       target="_blank"

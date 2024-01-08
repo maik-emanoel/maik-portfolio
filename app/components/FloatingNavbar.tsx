@@ -60,7 +60,7 @@ export default function FloatingNavbar() {
             id="pillTabs"
             transition={{ type: "spring", bounce: 0.35 }}
           >
-            <span className="rounded-full absolute inset-0 z-10 mix-blend-difference bg-slate-100" />
+            <span className="rounded-full absolute inset-0 z-10 mix-blend-difference bg-primary" />
           </MagicTabSelect>
         )}
         {tab.name}
@@ -71,7 +71,7 @@ export default function FloatingNavbar() {
   return (
     <div
       data-isbottom={isBottom}
-      className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-slate-800/25 z-50 sm:gap-1 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-slate-100 group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200 md:bottom-6 xs:data-[isbottom=true]:bottom-14"
+      className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-slate-800/25 z-50 sm:gap-1 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-primary group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200 md:bottom-6 xs:data-[isbottom=true]:bottom-14"
       style={{
         boxShadow: "#00000040 0px 3px 8px",
       }}

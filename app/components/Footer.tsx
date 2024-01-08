@@ -8,7 +8,7 @@ import { IconProps } from "@phosphor-icons/react";
 
 export default function Footer() {
   return (
-    <footer className="relative max-w-[1000px] bottom-8 mx-auto px-5 flex justify-between items-center text-slate-400 xs:bottom-4">
+    <footer className="relative max-w-[1000px] bottom-8 mx-auto px-5 flex justify-between items-center text-muted xs:bottom-4">
       <p className="text-xs">Created by Maik Emanoel</p>
 
       <div className="flex gap-4 xs:gap-2">
@@ -45,7 +45,7 @@ interface SocialLinkProps {
 
 function SocialLink({ name, path, icon: Icon }: SocialLinkProps) {
   return (
-    <a href={path} target="_blank" title={name} className="hover:text-slate-100 transition-all duration-200">
+    <a href={path} target="_blank" title={name} className="hover:text-primary transition-all duration-200">
       <Icon size={20} />
     </a>
   );

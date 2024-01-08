@@ -6,9 +6,9 @@ export default function About() {
     <Section id="about" title="About" className="sm:h-screen-mobile">
       <div className="flex flex-col gap-8">
         <div className="flex-1 mt-4">
-          <h3 className="text-3xl text-slate-300 mb-4 sm:text-2xl">Who is me</h3>
+          <h3 className="text-3xl text-secondary mb-4 sm:text-2xl">Who is me</h3>
 
-          <p className="text-slate-400 sm:text-sm">
+          <p className="text-muted sm:text-sm">
             Im a Frontend Web Developer building the Front-end of Websites and
             Web Applications that leads to the success of the overall product.
             <br /><br />
@@ -26,7 +26,7 @@ export default function About() {
         </div>
 
         <div>
-          <h3 className="text-3xl text-slate-300 mb-10 sm:text-2xl sm:mb-4">My skills and technologies</h3>
+          <h3 className="text-3xl text-secondary mb-10 sm:text-2xl sm:mb-4">My skills and technologies</h3>
           <InfiniteSlider />
         </div>
       </div>

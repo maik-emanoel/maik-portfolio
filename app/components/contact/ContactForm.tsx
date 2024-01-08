@@ -58,7 +58,7 @@ export default function ContactForm() {
           id="name"
           required
           ref={nameRef}
-          className="mb-6 w-full max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-slate-400"
+          className="mb-6 w-full max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-muted"
           placeholder="Name"
         />
       </div>
@@ -73,7 +73,7 @@ export default function ContactForm() {
           id="email"
           required
           ref={emailRef}
-          className="mb-6 w-full max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-slate-400"
+          className="mb-6 w-full max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-muted"
           placeholder="Email"
         />
       </div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
           id="message"
           required
           ref={messageRef}
-          className="mb-6 w-full h-40 max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-slate-400 resize-none"
+          className="mb-6 w-full h-40 max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-muted resize-none"
           placeholder="Message"
         />
       </div>
@@ -111,7 +111,7 @@ function Toast({
   return (
     <div
       role="alert"
-      className="fixed top-8 right-8 z-[999] flex items-center gap-4 rounded-lg p-4 text-slate-300 bg-blue-950 shadow overflow-hidden"
+      className="fixed top-8 right-8 z-[999] flex items-center gap-4 rounded-lg p-4 text-secondary bg-blue-950 shadow overflow-hidden"
       style={{
         transform: toastIsVisible
           ? "translateX(0%)"
