@@ -6,6 +6,7 @@
   :root {
     --primary: 255 17 255;
     --secondary: 255 255 255;
+    --terciary: 0 256 0;
     --muted: 34 255 136;
     --blue-primary: 265 0 0;
     --blue-secondary: 47 132 52;
@@ -14,7 +15,8 @@
 
   html.dark {
     --primary: 241 245 249;
-    --secondary: 203 213 225;
+    --secondary: 226 232 240;
+    --terciary: 203 213 225;
     --muted: 148 163 184;
     --background: 15 23 42;
     --blue-primary: 47 132 255;
