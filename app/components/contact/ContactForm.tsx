@@ -92,7 +92,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <button className="h-[52px] bg-slate-200 text-black px-6 rounded">
+      <button className="h-[52px] bg-secondary text-black px-6 rounded">
         Send Message
       </button>
 
@@ -111,7 +111,7 @@ function Toast({
   return (
     <div
       role="alert"
-      className="fixed top-8 right-8 z-[999] flex items-center gap-4 rounded-lg p-4 text-secondary bg-blue-950 shadow overflow-hidden"
+      className="fixed top-8 right-8 z-[999] flex items-center gap-4 rounded-lg p-4 text-terciary bg-blue-950 shadow overflow-hidden"
       style={{
         transform: toastIsVisible
           ? "translateX(0%)"

@@ -7,7 +7,7 @@ export default function Contact() {
       <div className="mt-4 w-full h-fit">
           <p className="text-sm text-muted mb-6">
             Get in touch or shoot me an email directly on{" "}
-            <a href="mailto:contato.maikemanoel@gmail.com" className="font-medium text-slate-200">
+            <a href="mailto:contato.maikemanoel@gmail.com" className="font-medium text-secondary">
               contato.maikemanoel@gmail.com
             </a>
           </p>
