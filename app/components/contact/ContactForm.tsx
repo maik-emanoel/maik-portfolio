@@ -58,7 +58,7 @@ export default function ContactForm() {
           id="name"
           required
           ref={nameRef}
-          className="mb-6 w-full max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-muted"
+          className="mb-6 w-full max-w-[570px] border border-slate-300 dark:border-slate-700 rounded outline-none px-4 py-3 focus:border-muted"
           placeholder="Name"
         />
       </div>
@@ -73,7 +73,7 @@ export default function ContactForm() {
           id="email"
           required
           ref={emailRef}
-          className="mb-6 w-full max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-muted"
+          className="mb-6 w-full max-w-[570px] border border-slate-300 dark:border-slate-700 rounded outline-none px-4 py-3 focus:border-muted"
           placeholder="Email"
         />
       </div>
@@ -87,12 +87,12 @@ export default function ContactForm() {
           id="message"
           required
           ref={messageRef}
-          className="mb-6 w-full h-40 max-w-[570px] border border-slate-700 rounded outline-none px-4 py-3 focus:border-muted resize-none"
+          className="mb-6 w-full h-40 max-w-[570px] border border-slate-300 dark:border-slate-700 rounded outline-none px-4 py-3 focus:border-muted resize-none"
           placeholder="Message"
         />
       </div>
 
-      <button className="h-[52px] bg-secondary text-black px-6 rounded">
+      <button className="h-[52px] bg-secondary text-white dark:text-black px-6 rounded">
         Send Message
       </button>
 

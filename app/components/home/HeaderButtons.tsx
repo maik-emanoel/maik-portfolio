@@ -9,7 +9,7 @@ export default function HeaderButtons({ className }: HeaderButtonsProps) {
   return (
     <div className={twMerge("flex items-center gap-2 relative", className)}>
       <Time />
-      <span className="h-6 w-[1px] bg-slate-500"></span>
+      <span className="h-6 w-[1px] bg-slate-200 dark:bg-slate-500"></span>
       <div>
         <Image
           src="/eua-flag.png"

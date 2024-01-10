@@ -38,7 +38,7 @@ export default function Home() {
             className="w-full h-full rounded-full object-cover object-top"
           />
 
-          <div className="absolute inset-0 border rounded-full border-r-transparent border-l-transparent animate-spin-slow"></div>
+          <div className="absolute inset-0 border border-t-muted border-b-muted rounded-full border-r-transparent border-l-transparent animate-spin-slow"></div>
         </div>
 
         <CaretDown className="hidden sm:block absolute left-1/2 -translate-x-[50%] bottom-[15%] animate-scrollBounce"/>

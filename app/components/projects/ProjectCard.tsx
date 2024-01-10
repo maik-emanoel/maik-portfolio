@@ -26,7 +26,7 @@ export default function ProjectCard({ repoInfos }: any) {
             return (
               <span
                 key={topic}
-                className="bg-blue-topic py-1 px-3 rounded-full text-sm font-medium inline-block mr-1 mb-2"
+                className="bg-blue-topic py-1 px-3 rounded-full text-sm font-medium inline-block mr-1 mb-2 text-white"
               >
                 {topic}
               </span>

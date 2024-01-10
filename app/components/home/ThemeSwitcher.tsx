@@ -75,7 +75,7 @@
     return (
       <>
         <div
-          className="text-primary rounded-full border border-muted h-7 w-7 grid place-items-center"
+          className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center"
           onClick={() => setShowOptions((prevState) => !prevState)}
         >
           {selectedOption === "light" && <Sun size={20} />}
