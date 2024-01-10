@@ -4,13 +4,14 @@
 
 @layer base {
   :root {
-    --primary: 255 17 255;
-    --secondary: 255 255 255;
-    --terciary: 0 256 0;
-    --muted: 34 255 136;
-    --blue-primary: 265 0 0;
-    --blue-secondary: 47 132 52;
-    --blue-topic: 34 255 34;
+    --primary: 24 24 27; /* zinc-900 */
+    --secondary: 39 39 42; /* zinc-800 */
+    --terciary: 82 82 91; /* zinc-600 */
+    --muted: 113 113 122; /* zinc-500 */
+    --background: 255 255 255; /* white */
+    --blue-primary: 47 132 255;
+    --blue-secondary: 96 165 250;
+    --blue-topic: 96 165 250;
   }
 
   html.dark {
@@ -34,7 +35,7 @@
     color: #2F84FF;
     overflow: hidden;
     white-space: nowrap;
-    text-shadow: 0px 0px 5px #3e3ba4;
+    /* text-shadow: 0px 0px 5px #3e3ba4; */
     -webkit-text-stroke: 0px #2F84FF;
     animation: fill 8s 3s forwards;
   }
