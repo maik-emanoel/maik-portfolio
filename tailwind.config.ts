@@ -83,7 +83,8 @@ const config: Config = {
       },
       colors: {
         primary: "rgb(var(--primary) / <alpha-value>)", // slate-100
-        secondary: "rgb(var(--secondary) / <alpha-value>)", // slate-300
+        secondary: 'rgb(var(--secondary) / <alpha-value>)', // slate-200
+        terciary: "rgb(var(--terciary) / <alpha-value>)", // slate-300
         muted: "rgb(var(--muted) / <alpha-value>)", // slate-400
         background: "rgb(var(--background) / <alpha-value>)", // slate-900
 
