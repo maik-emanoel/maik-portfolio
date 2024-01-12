@@ -1,5 +1,4 @@
 import BgEffect from "./components/BgEffect";
-import ButtonsOnScroll from "./components/ButtonsOnScroll";
 import About from "./sections/About";
 import Home from "./sections/Home";
 import FloatingNavbar from "@/app/components/FloatingNavbar";
@@ -21,7 +20,6 @@ export default function App() {
 
       <FloatingNavbar />
       <BgEffect />
-      <ButtonsOnScroll />
     </>
   );
 }
