@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useIsTouchSupported } from "../utils/touchUtils";
 
 const elementSize = 600;
 
 export default function BgEffect() {
+  const isTouchSupported = useIsTouchSupported()
   const [position, setPosition] = useState({
     x: 0,
     y: 0,
@@ -24,6 +26,10 @@ export default function BgEffect() {
       window.removeEventListener("mousemove", onMove);
     };
   }, []);
+
+  if (isTouchSupported) {
+    return null
+  }
 
   return (
     <span
