@@ -1,26 +1,52 @@
 "use client";
 
 import { Moon, Sun, Desktop, Check, IconProps } from "@phosphor-icons/react";
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { Options, Theme } from "./HeaderButtons";
 
-type Theme = "light" | "dark";
-type Options = "light" | "dark" | "system";
+interface ThemeSwitcherProps {
+  selectedOption: Options | null;
+  setSelectedOption: Dispatch<SetStateAction<Options | null>>;
+  theme: Theme | null;
+  setTheme: Dispatch<SetStateAction<Theme | null>>;
+  isActive: Options | null;
+  setIsActive: Dispatch<SetStateAction<Options | null>>;
+}
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher({
+  selectedOption,
+  setSelectedOption,
+  theme,
+  setTheme,
+  isActive,
+  setIsActive,
+}: ThemeSwitcherProps) {
   const [showOptions, setShowOptions] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<Options | null>(null);
-  const [theme, setTheme] = useState<Theme | null>(null);
-  const [isActive, setIsActive] = useState<Options | null>(null)
-
   let newTheme = useRef<Theme | null>(null);
+
+  useEffect(() => {
+    function onScroll() {
+      setShowOptions(false);
+    }
+  
+    if (showOptions) {
+      window.addEventListener("scroll", onScroll);
+    }
+  
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [showOptions]);
 
   useEffect(() => {
     const savedThemeOpt = localStorage.getItem("themeOption") as Options;
     const savedTheme = localStorage.getItem("theme") as Theme;
+    const savedActive = savedTheme;
 
     setSelectedOption(savedThemeOpt || "dark");
     setTheme(savedTheme || "dark");
-  }, []);
+    setIsActive(savedActive || "dark");
+  }, [setIsActive, setSelectedOption, setTheme]);
 
   useEffect(() => {
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -48,7 +74,7 @@ export default function ThemeSwitcher() {
         systemThemeChangeHandler
       );
     }
-  }, [selectedOption]);
+  }, [selectedOption, setTheme]);
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -58,7 +84,7 @@ export default function ThemeSwitcher() {
     } else {
       html?.classList.remove("dark");
     }
-  }, [selectedOption, theme]);
+  }, [theme]);
 
   function changeOption(selectedOption: Options) {
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -82,7 +108,7 @@ export default function ThemeSwitcher() {
   return (
     <>
       <div
-        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center"
+        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10"
         onClick={() => setShowOptions((prevState) => !prevState)}
       >
         {selectedOption === "light" && <Sun size={20} />}
@@ -91,27 +117,36 @@ export default function ThemeSwitcher() {
       </div>
 
       <div
-        className={`absolute top-12 right-0 z-50 bg-background/20 backdrop-blur-lg shadow-lg overflow-hidden ${
+        className={`absolute top-12 right-0 z-50 bg-background/60 backdrop-blur-lg shadow-lg overflow-hidden ${
           showOptions ? "flex" : "hidden"
         } flex-col border border-slate-200 dark:border-slate-500 rounded-lg`}
       >
         <ThemeButton
           name="Light"
           icon={Sun}
-          changeOption={() => {changeOption("light"); setIsActive('light')}}
-          isActive={isActive === 'light'}
+          changeOption={() => {
+            changeOption("light");
+            setIsActive("light");
+          }}
+          isActive={isActive === "light"}
         />
         <ThemeButton
           name="Dark"
           icon={Moon}
-          changeOption={() => {changeOption("dark"); setIsActive('dark')}}
-          isActive={isActive === 'dark'}
+          changeOption={() => {
+            changeOption("dark");
+            setIsActive("dark");
+          }}
+          isActive={isActive === "dark"}
         />
         <ThemeButton
           name="System"
           icon={Desktop}
-          changeOption={() => {changeOption("system"); setIsActive('system')}}
-          isActive={isActive === 'system'}
+          changeOption={() => {
+            changeOption("system");
+            setIsActive("system");
+          }}
+          isActive={isActive === "system"}
         />
       </div>
     </>
@@ -122,10 +157,15 @@ interface ThemeButtonProps {
   name: string;
   icon: React.ElementType<IconProps>;
   changeOption: () => void;
-  isActive: boolean
+  isActive: boolean;
 }
 
-function ThemeButton({ name, icon: Icon, changeOption, isActive }: ThemeButtonProps) {
+function ThemeButton({
+  name,
+  icon: Icon,
+  changeOption,
+  isActive,
+}: ThemeButtonProps) {
   return (
     <div
       onClick={changeOption}
@@ -134,9 +174,7 @@ function ThemeButton({ name, icon: Icon, changeOption, isActive }: ThemeButtonPr
     >
       <Icon size={20} />
       <span className="text-sm">{name}</span>
-      {isActive && (
-        <Check size={14} className="absolute right-3"/>
-      )}
+      {isActive && <Check size={14} className="absolute right-3" />}
     </div>
   );
 }
