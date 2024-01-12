@@ -12,6 +12,8 @@
     --blue-primary: 47 132 255;
     --blue-secondary: 96 165 250;
     --blue-topic: 96 165 250;
+
+    --bullet-color: rgb(24, 24, 27);
   }
 
   html.dark {
@@ -23,6 +25,8 @@
     --blue-primary: 47 132 255;
     --blue-secondary: 96 165 250;
     --blue-topic: 30 58 138;
+
+    --bullet-color: rgb(255, 255, 255);
   }
 
   h1::before {
@@ -53,7 +57,7 @@
 
 @layer utilities {
   .h-screen-mobile {
-    height: calc(100dvh - 40px);
+    height: 100dvh;
   }
 
   .animation-paused {
@@ -68,7 +72,7 @@
   .bullet {
     width: 8px;
     height: 8px;
-    background: var(--primary);
+    background: var(--bullet-color);
     display: inline-block;
     margin-inline: 4px;
     border-radius: 100%;
@@ -78,7 +82,7 @@
   }
 
   .bullet-active {
-    background: var(--primary);
+    background: var(--bullet-color);
     opacity: .9;
     scale: 1.5;
   }
