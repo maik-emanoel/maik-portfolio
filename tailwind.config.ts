@@ -20,6 +20,8 @@ const config: Config = {
         fromLeft: "fromLeft .3s forwards",
         toastProgress: "toastProgress 5s .3s forwards linear",
         scrollBounce: "scrollBounce .8s linear infinite alternate",
+        fadeIn: "fadeIn .2s forwards",
+        fadeOut: "fadeOut .2s forwards"
       },
       keyframes: {
         rubberband: {
@@ -58,9 +60,18 @@ const config: Config = {
         toastProgress: {
           "100%": { right: "100%" },
         },
+
         scrollBounce: {
           "100%": { bottom: "14.5%" },
         },
+
+        fadeIn: {
+          "0%": { scale: ".4", opacity: ".6" },
+        },
+        
+        fadeOut: {
+          "100%": {scale: ".4", opacity: "0", display: 'none'}
+        }
       },
       screens: {
         "2xl": { max: "1535px" },
@@ -83,7 +94,7 @@ const config: Config = {
       },
       colors: {
         primary: "rgb(var(--primary) / <alpha-value>)", // slate-100
-        secondary: 'rgb(var(--secondary) / <alpha-value>)', // slate-200
+        secondary: "rgb(var(--secondary) / <alpha-value>)", // slate-200
         terciary: "rgb(var(--terciary) / <alpha-value>)", // slate-300
         muted: "rgb(var(--muted) / <alpha-value>)", // slate-400
         background: "rgb(var(--background) / <alpha-value>)", // slate-900
