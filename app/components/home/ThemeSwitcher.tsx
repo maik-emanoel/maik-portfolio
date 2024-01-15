@@ -22,19 +22,35 @@ export default function ThemeSwitcher({
   setIsActive,
 }: ThemeSwitcherProps) {
   const [showOptions, setShowOptions] = useState(false);
+  const themeOptionsRef = useRef<HTMLDivElement | null>(null);
   let newTheme = useRef<Theme | null>(null);
 
   useEffect(() => {
+    function handleClickOutsideShowOptions(e: MouseEvent) {
+      if (
+        themeOptionsRef.current &&
+        !themeOptionsRef.current?.contains(e.target as Node)
+      )
+        setShowOptions(false);
+    }
+
     function onScroll() {
       setShowOptions(false);
     }
-  
+
     if (showOptions) {
       window.addEventListener("scroll", onScroll);
     }
-  
+
+    setTimeout(() => {
+      if (showOptions) {
+        window.addEventListener("click", handleClickOutsideShowOptions);
+      }
+    }, 100);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("click", handleClickOutsideShowOptions);
     };
   }, [showOptions]);
 
@@ -105,11 +121,15 @@ export default function ThemeSwitcher({
     localStorage.setItem("theme", newTheme.current);
   }
 
+  function handleShowOptions() {
+    setShowOptions((prevState) => !prevState);
+  }
+
   return (
     <>
       <div
         className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10"
-        onClick={() => setShowOptions((prevState) => !prevState)}
+        onClick={handleShowOptions}
       >
         {selectedOption === "light" && <Sun size={20} />}
         {selectedOption === "dark" && <Moon size={20} />}
@@ -117,8 +137,9 @@ export default function ThemeSwitcher({
       </div>
 
       <div
+        ref={themeOptionsRef}
         className={`absolute top-12 right-0 z-50 bg-background/60 backdrop-blur-lg shadow-lg overflow-hidden ${
-          showOptions ? "flex" : "hidden"
+          showOptions ? "flex animate-fadeIn" : "animate-fadeOut"
         } flex-col border border-slate-200 dark:border-slate-500 rounded-lg`}
       >
         <ThemeButton
