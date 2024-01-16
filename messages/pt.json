@@ -1,0 +1,48 @@
+{
+  "home": {
+    "intro-text": {
+      "first-line": "olá, eu sou",
+      "second-line": "um Desenvolvedor Front-end"
+    }
+  },
+  "about": {
+    "section-name": "Sobre",
+    "first-subtitle": "Quem sou eu",
+    "second-subtitle": "Minhas habilidades e tecnologias",
+    "first-parag": "Sou um Frontend Web Developer construindo Front-end de sites, apaixonado por criar sites visualmente impressionantes e de alto desempenho.",
+    "second-parag": "Desde a infância, a tecnologia me fascina, impulsionando meu compromisso com o aprendizado contínuo. Veja meus projetos mais recentes na seção Projetos, onde combino criatividade e habilidades técnicas para oferecer experiências digitais de alto nível.",
+    "third-parag": "Sinta-se à vontade para se conectar ou me seguir nas minhas redes sociais. Estou aberto a oportunidades de trabalho onde possa contribuir, aprender e crescer. Se tiver uma boa oportunidade que corresponda às minhas competências e experiência, não hesite em contactar-me."
+  },
+  "projects": {
+    "section-name": "Projetos",
+    "first-link": "Ver repositório",
+    "second-link": "Visitar o app"
+  },
+  "contact": {
+    "section-name": "Contato",
+    "label": "Entre em contato ou envie-me um e-mail diretamente para",
+    "placeholder": {
+      "name": "Nome",
+      "message": "Mensagem"
+    },
+    "send-button": "Enviar mensagem",
+    "toast": {
+      "success-message": "Mensagem enviada com sucesso.",
+      "error-message": "Falha ao enviar mensagem."
+    }
+  },
+  "footer": {
+    "created-by": "Criado por"
+  },
+  "floating-navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "themeOptions": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  }
+}

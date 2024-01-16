@@ -1,0 +1,48 @@
+{
+  "home": {
+    "intro-text": {
+      "first-line": "hi, I'm",
+      "second-line": "a Front-end Developer"
+    }
+  },
+  "about": {
+    "section-name": "About",
+    "first-subtitle": "Who is me",
+    "second-subtitle": "My skills and technologies",
+    "first-parag": "I'm a Frontend Web Developer building the Front-end of websites, passionate about creating visually stunning, high-performance websites.",
+    "second-parag": "Ever since childhood, technology has fascinated me, driving my commitment to continuous learning. View my latest projects in the Projects section, where I combine creativity and technical skills to deliver top-notch digital experiences.",
+    "third-parag": "Feel free to Connect or Follow me on my social media. I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me."
+  },
+  "projects": {
+    "section-name": "Projects",
+    "first-link": "View repository",
+    "second-link": "Visit the app"
+  },
+  "contact": {
+    "section-name": "Contact",
+    "label": "Get in touch or shoot me an email directly on",
+    "placeholder": {
+      "name": "Name",
+      "message": "Message"
+    },
+    "send-button": "Send message",
+    "toast": {
+      "success-message": "Message sent successfully.",
+      "error-message": "Failed to send message."
+    }
+  },
+  "footer": {
+    "created-by": "Criado por"
+  },
+  "floating-navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "themeOptions": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}
