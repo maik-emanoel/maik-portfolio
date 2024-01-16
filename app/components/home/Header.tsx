@@ -1,7 +1,10 @@
 import Image from "next/image";
 import HeaderButtons from "./HeaderButtons";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("themeOptions")
+
   return (
     <header className="py-5 flex items-center justify-between h-20">
       <div>
@@ -21,7 +24,7 @@ export default function Header() {
         />
       </div>
 
-      <HeaderButtons />
+      <HeaderButtons lightLabel={t("light")} darkLabel={t("dark")} systemLabel={t("system")} />
     </header>
   );
 }
