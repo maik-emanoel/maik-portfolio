@@ -4,26 +4,16 @@ import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useState } from "react";
 import { MagicTabSelect } from "react-magic-motion";
 
-const pillTabs = [
-  {
-    name: "Home",
-    path: "#home",
-  },
-  {
-    name: "About",
-    path: "#about",
-  },
-  {
-    name: "Projects",
-    path: "#projects",
-  },
-  {
-    name: "Contact",
-    path: "#contact ",
-  },
-];
+interface FloatingNavbarProps {
+  pillTabs: {
+    name: string,
+    path: string
+  }[]
+}
 
-export default function FloatingNavbar() {
+export default function FloatingNavbar(props: FloatingNavbarProps) {
+  const { pillTabs } = props
+
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const [isBottom, setIsBottom] = useState(false);
 
