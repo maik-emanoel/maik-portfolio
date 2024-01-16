@@ -2,9 +2,9 @@
 
 import { Moon, Sun, Desktop, Check, IconProps } from "@phosphor-icons/react";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { Options, Theme } from "./HeaderButtons";
+import { HeaderButtonsProps, Options, Theme } from "./HeaderButtons";
 
-interface ThemeSwitcherProps {
+interface ThemeSwitcherProps extends HeaderButtonsProps {
   selectedOption: Options | null;
   setSelectedOption: Dispatch<SetStateAction<Options | null>>;
   theme: Theme | null;
@@ -20,6 +20,9 @@ export default function ThemeSwitcher({
   setTheme,
   isActive,
   setIsActive,
+  lightLabel,
+  darkLabel,
+  systemLabel
 }: ThemeSwitcherProps) {
   const [showOptions, setShowOptions] = useState(false);
   const themeOptionsRef = useRef<HTMLDivElement | null>(null);
@@ -143,7 +146,7 @@ export default function ThemeSwitcher({
         } flex-col border border-slate-200 dark:border-slate-500 rounded-lg`}
       >
         <ThemeButton
-          name="Light"
+          name={lightLabel}
           icon={Sun}
           changeOption={() => {
             changeOption("light");
@@ -152,7 +155,7 @@ export default function ThemeSwitcher({
           isActive={isActive === "light"}
         />
         <ThemeButton
-          name="Dark"
+          name={darkLabel}
           icon={Moon}
           changeOption={() => {
             changeOption("dark");
@@ -161,7 +164,7 @@ export default function ThemeSwitcher({
           isActive={isActive === "dark"}
         />
         <ThemeButton
-          name="System"
+          name={systemLabel}
           icon={Desktop}
           changeOption={() => {
             changeOption("system");
