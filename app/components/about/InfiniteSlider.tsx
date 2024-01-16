@@ -1,6 +1,10 @@
 "use client";
 
-import { FaHtml5 as htmlLogo, FaReact as reactLogo, FaGitAlt as gitLogo } from "react-icons/fa";
+import {
+  FaHtml5 as htmlLogo,
+  FaReact as reactLogo,
+  FaGitAlt as gitLogo,
+} from "react-icons/fa";
 import {
   IoLogoCss3 as cssLogo,
   IoLogoGithub as githubLogo,
@@ -14,6 +18,7 @@ import {
   SiNextdotjs as nextjsLogo,
   SiTailwindcss as tailwindLogo,
 } from "react-icons/si";
+import { useIsTouchSupported } from "@/app/utils/touchUtils";
 
 const logos = [
   {
@@ -50,7 +55,7 @@ const logos = [
   },
   {
     image: gitLogo,
-    name: 'Git'
+    name: "Git",
   },
   {
     image: vscodeLogo,
@@ -59,15 +64,19 @@ const logos = [
 ];
 
 const before =
-  "before:absolute before:top-0 before:left-0 before:w-[20%] before:h-full before:bg-[linear-gradient(to_left,_transparent,_#0f172a)] before:z-10";
+  "before:absolute before:top-0 before:left-0 before:w-[15%] before:h-full before:bg-[linear-gradient(to_left,_transparent,_#fff)] before:dark:bg-[linear-gradient(to_left,_transparent,_#0f172a)] before:z-10";
 
 const after =
-  "after:absolute after:top-0 after:right-0 after:w-[20%] after:h-full after:bg-[linear-gradient(to_right,_transparent,_#0f172a)] after:z-10";
+  "after:absolute after:top-0 after:right-0 after:w-[15%] after:h-full after:bg-[linear-gradient(to_right,_transparent,_#fff)] after:dark:bg-[linear-gradient(to_right,_transparent,_#0f172a)] after:z-10";
 
 export default function InfiniteSlider() {
+  const isTouchSupported = useIsTouchSupported();
+
   return (
     <div
-      className={`overflow-hidden py-2 whitespace-nowrap text-terciary group relative slider logos-slide`}
+      className={`overflow-hidden py-2 whitespace-nowrap text-terciary group relative slider logos-slide ${
+        isTouchSupported ? `${before} ${after}` : ""
+      }`}
     >
       <LogosSlide />
       <LogosSlide />
