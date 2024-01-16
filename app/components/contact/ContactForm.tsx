@@ -4,7 +4,21 @@ import { FormEvent, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaTelegramPlane } from "react-icons/fa";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  placeholderName: string;
+  placeholderMessage: string;
+  buttonText: string;
+  toastSuccessMessage: string;
+  toastErrorMessage: string;
+}
+
+export default function ContactForm({
+  placeholderName,
+  placeholderMessage,
+  buttonText,
+  toastSuccessMessage,
+  toastErrorMessage,
+}: ContactFormProps) {
   const formRef = useRef<null | HTMLFormElement>(null);
 
   const nameRef = useRef<null | HTMLInputElement>(null);
@@ -59,7 +73,7 @@ export default function ContactForm() {
           required
           ref={nameRef}
           className="mb-6 w-full max-w-[570px] border border-slate-300 dark:border-slate-700 rounded outline-none px-4 py-3 focus:border-muted"
-          placeholder="Name"
+          placeholder={placeholderName}
         />
       </div>
 
@@ -88,15 +102,20 @@ export default function ContactForm() {
           required
           ref={messageRef}
           className="mb-6 w-full h-40 max-w-[570px] border border-slate-300 dark:border-slate-700 rounded outline-none px-4 py-3 focus:border-muted resize-none"
-          placeholder="Message"
+          placeholder={placeholderMessage}
         />
       </div>
 
       <button className="h-[52px] bg-secondary text-white dark:text-black px-6 rounded">
-        Send Message
+        {buttonText}
       </button>
 
-      <Toast status={status} toastIsVisible={toastIsVisible} />
+      <Toast
+        status={status}
+        toastIsVisible={toastIsVisible}
+        toastSuccessMessage={toastSuccessMessage}
+        toastErrorMessage={toastErrorMessage}
+      />
     </form>
   );
 }
@@ -104,9 +123,13 @@ export default function ContactForm() {
 function Toast({
   status,
   toastIsVisible,
+  toastSuccessMessage,
+  toastErrorMessage
 }: {
   status: null | number;
   toastIsVisible: boolean;
+  toastSuccessMessage: string,
+  toastErrorMessage: string
 }) {
   return (
     <div
@@ -126,8 +149,8 @@ function Toast({
       />
       <p className="text-sm">
         {status === 200
-          ? "Message sent successfully."
-          : "Failed to send message."}
+          ? `${toastSuccessMessage}`
+          : `${toastErrorMessage}`}
       </p>
 
       <div
