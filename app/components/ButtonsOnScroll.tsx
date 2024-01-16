@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import ThemeSwitcher from "./home/ThemeSwitcher";
 import Time from "./home/Time";
-import { Options, Theme } from "./home/HeaderButtons";
+import { HeaderButtonsProps, Options, Theme } from "./home/HeaderButtons";
 
-interface ButtonsOnScrollProps {
+interface ButtonsOnScrollProps extends HeaderButtonsProps {
   selectedOption: Options | null;
   setSelectedOption: Dispatch<SetStateAction<Options | null>>;
   theme: Theme | null;
@@ -22,6 +22,9 @@ export default function ButtonsOnScroll({
   setTheme,
   isActive,
   setIsActive,
+  lightLabel,
+  darkLabel,
+  systemLabel
 }: ButtonsOnScrollProps) {
   const [scrollValue, setScrollValue] = useState(0);
 
@@ -62,6 +65,9 @@ export default function ButtonsOnScroll({
         setTheme={setTheme}
         isActive={isActive}
         setIsActive={setIsActive}
+        lightLabel={lightLabel}
+        darkLabel={darkLabel}
+        systemLabel={systemLabel}
       />
     </div>
   );
