@@ -1,7 +1,31 @@
-const firstPhrase = "hi,\u00A0I'm"; // hi, I'm
-const secondPhrase = "a\u00A0Front-End\u00A0Developer"; // a Front-end Developer
+import { useTranslations } from "next-intl";
+
+// \u00A0
 
 export default function IntroTitle() {
+  const t = useTranslations("home.intro-text")
+
+  const firstPhrase = t("first-line"); // hi, I'm
+  const secondPhrase = t("second-line"); // a Front-end Developer
+
+  const firstPhraseArr = firstPhrase.split("").map((char, i) => (
+    <span
+      key={i}
+      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
+    >
+      {char === " " ? "\u00A0" : char}
+    </span>
+  ));
+
+  const secondPhraseArr = secondPhrase.split("").map((char, i) => (
+    <span
+      key={i}
+      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
+    >
+      {char === " " ? "\u00A0" : char}
+    </span>
+  ));
+
   return (
     <div className="leading-tight">
       <span className="text-spanClamp">{firstPhraseArr}</span>
@@ -18,25 +42,3 @@ export default function IntroTitle() {
     </div>
   );
 }
-
-const firstPhraseArr = firstPhrase.split("").map((letter, i) => {
-  return (
-    <span
-      key={i}
-      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
-    >
-      {letter}
-    </span>
-  );
-});
-
-const secondPhraseArr = secondPhrase.split("").map((letter, i) => {
-  return (
-    <span
-      key={i}
-      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
-    >
-      {letter}
-    </span>
-  );
-});
