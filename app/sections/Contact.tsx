@@ -1,18 +1,30 @@
+import { useTranslations } from "next-intl";
 import ContactForm from "../components/contact/ContactForm";
 import Section from "../components/Section";
 
 export default function Contact() {
-  return (
-    <Section title="Contact" id="contact" className="h-screen-mobile">
-      <div className="mt-4 w-full h-fit">
-          <p className="text-sm text-muted mb-6">
-            Get in touch or shoot me an email directly on{" "}
-            <a href="mailto:contato.maikemanoel@gmail.com" className="font-medium text-secondary">
-              contato.maikemanoel@gmail.com
-            </a>
-          </p>
+  const t = useTranslations("contact");
 
-          <ContactForm />
+  return (
+    <Section title={t("section-name")} id="contact" className="h-screen-mobile">
+      <div className="mt-4 w-full h-fit">
+        <p className="text-sm text-muted mb-6">
+          {t("label")}{" "}
+          <a
+            href="mailto:contato.maikemanoel@gmail.com"
+            className="font-medium text-secondary"
+          >
+            contato.maikemanoel@gmail.com
+          </a>
+        </p>
+
+        <ContactForm
+          placeholderName={t("placeholder.name")}
+          placeholderMessage={t("placeholder.message")}
+          buttonText={t("send-button")}
+          toastSuccessMessage={t("toast.success-message")}
+          toastErrorMessage={t("toast.error-message")}
+        />
       </div>
     </Section>
   );
