@@ -1,32 +1,39 @@
 "use client";
 
-import { Moon, Sun, Desktop, Check, IconProps } from "@phosphor-icons/react";
+import {
+  Moon,
+  Sun,
+  Desktop,
+  Check,
+  IconProps,
+  CircleNotch,
+} from "@phosphor-icons/react";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { HeaderButtonsProps, Options, Theme } from "./HeaderButtons";
+import { HeaderButtonsProps } from "./HeaderButtons";
+import { useTheme } from "next-themes";
 
 interface ThemeSwitcherProps extends HeaderButtonsProps {
-  selectedOption: Options | null;
-  setSelectedOption: Dispatch<SetStateAction<Options | null>>;
-  theme: Theme | null;
-  setTheme: Dispatch<SetStateAction<Theme | null>>;
-  isActive: Options | null;
-  setIsActive: Dispatch<SetStateAction<Options | null>>;
+  isActive: string | null;
+  setIsActive: Dispatch<SetStateAction<string | null>>;
 }
 
 export default function ThemeSwitcher({
-  selectedOption,
-  setSelectedOption,
-  theme,
-  setTheme,
   isActive,
   setIsActive,
   lightLabel,
   darkLabel,
-  systemLabel
+  systemLabel,
 }: ThemeSwitcherProps) {
   const [showOptions, setShowOptions] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
   const themeOptionsRef = useRef<HTMLDivElement | null>(null);
-  let newTheme = useRef<Theme | null>(null);
+
+  useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    if (theme) setIsActive(theme);
+  }, [setIsActive, theme]);
 
   useEffect(() => {
     function handleClickOutsideShowOptions(e: MouseEvent) {
@@ -57,71 +64,19 @@ export default function ThemeSwitcher({
     };
   }, [showOptions]);
 
-  useEffect(() => {
-    const savedThemeOpt = localStorage.getItem("themeOption") as Options;
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    const savedActive = savedTheme;
+  if (!mounted) {
+    return (
+      <div
+        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10"
+        onClick={handleShowOptions}
+      >
+        <CircleNotch size={20} className="animate-spin" />
+      </div>
+    );
+  }
 
-    setSelectedOption(savedThemeOpt || "dark");
-    setTheme(savedTheme || "dark");
-    setIsActive(savedActive || "dark");
-  }, [setIsActive, setSelectedOption, setTheme]);
-
-  useEffect(() => {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const systemThemeChangeHandler = (event: MediaQueryListEvent) => {
-      if (event.matches) {
-        setTheme("dark");
-        newTheme.current = "dark";
-        localStorage.setItem("theme", newTheme.current);
-      } else {
-        setTheme("light");
-        newTheme.current = "light";
-        localStorage.setItem("theme", newTheme.current);
-      }
-    };
-
-    if (selectedOption === "system") {
-      systemTheme.addEventListener("change", systemThemeChangeHandler);
-      return () => {
-        systemTheme.removeEventListener("change", systemThemeChangeHandler);
-      };
-    } else {
-      return systemTheme.removeEventListener(
-        "change",
-        systemThemeChangeHandler
-      );
-    }
-  }, [selectedOption, setTheme]);
-
-  useEffect(() => {
-    const html = document.querySelector("html");
-
-    if (theme === "dark") {
-      html?.classList.add("dark");
-    } else {
-      html?.classList.remove("dark");
-    }
-  }, [theme]);
-
-  function changeOption(selectedOption: Options) {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-    if (selectedOption === "system") {
-      setTheme(systemTheme.matches ? "dark" : "light");
-      newTheme.current = systemTheme.matches ? "dark" : "light";
-    } else if (selectedOption === "light") {
-      setTheme("light");
-      newTheme.current = "light";
-    } else {
-      setTheme("dark");
-      newTheme.current = "dark";
-    }
-
-    setSelectedOption(selectedOption);
-    localStorage.setItem("themeOption", selectedOption);
-    localStorage.setItem("theme", newTheme.current);
+  function changeOption(selectedOption: string) {
+    setTheme(selectedOption);
   }
 
   function handleShowOptions() {
@@ -134,9 +89,9 @@ export default function ThemeSwitcher({
         className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10"
         onClick={handleShowOptions}
       >
-        {selectedOption === "light" && <Sun size={20} />}
-        {selectedOption === "dark" && <Moon size={20} />}
-        {selectedOption === "system" && <Desktop size={20} />}
+        {theme === "light" && <Sun size={20} />}
+        {theme === "dark" && <Moon size={20} />}
+        {theme === "system" && <Desktop size={20} />}
       </div>
 
       <div
