@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 24 24 27; /* zinc-900 */
+    --secondary: 39 39 42; /* zinc-800 */
+    --terciary: 82 82 91; /* zinc-600 */
+    --muted: 113 113 122; /* zinc-500 */
+    --background: 255 255 255; /* white */
+    --blue-primary: 47 132 255;
+    --blue-secondary: 96 165 250;
+    --blue-topic: 96 165 250;
+
+    --bullet-color: rgb(24, 24, 27);
+  }
+
+  html.dark {
+    --primary: 241 245 249;
+    --secondary: 226 232 240;
+    --terciary: 203 213 225;
+    --muted: 148 163 184;
+    --background: 15 23 42;
+    --blue-primary: 47 132 255;
+    --blue-secondary: 96 165 250;
+    --blue-topic: 30 58 138;
+
+    --bullet-color: rgb(255, 255, 255);
+  }
+
+  h1::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: #2F84FF;
+    overflow: hidden;
+    white-space: nowrap;
+    /* text-shadow: 0px 0px 5px #3e3ba4; */
+    -webkit-text-stroke: 0px #2F84FF;
+    animation: fill 8s 3s forwards;
+  }
+
+  input, textarea {
+    background: transparent;
+  }
+
+  @keyframes fill {
+    to {
+      width: 100%;
+    }
+  }
+}
+
+@layer utilities {
+  .h-screen-mobile {
+    height: 100dvh;
+  }
+
+  .animation-paused {
+    animation-play-state: paused;
+  }
+
+  .logos-slide:has(.logo:hover) .logo:not(:hover) {
+    opacity: .3;
+    scale: .95;
+  }
+
+  .bullet {
+    width: 8px;
+    height: 8px;
+    background: var(--bullet-color);
+    display: inline-block;
+    margin-inline: 4px;
+    border-radius: 100%;
+    cursor: pointer;
+    opacity: .3;
+    transition: scale .3s;
+  }
+
+  .bullet-active {
+    background: var(--bullet-color);
+    opacity: .9;
+    scale: 1.5;
+  }
+}
