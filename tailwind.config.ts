@@ -71,6 +71,10 @@ const config: Config = {
         
         fadeOut: {
           "100%": {scale: ".4", opacity: "0", display: 'none'}
+        },
+
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' }
         }
       },
       screens: {
