@@ -1,25 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import ThemeSwitcher from "./home/ThemeSwitcher";
 import Time from "./home/Time";
-import { HeaderButtonsProps, Options, Theme } from "./home/HeaderButtons";
+import { HeaderButtonsProps } from "./home/HeaderButtons";
+import LangButton from "./home/LangButton";
 
 interface ButtonsOnScrollProps extends HeaderButtonsProps {
-  selectedOption: Options | null;
-  setSelectedOption: Dispatch<SetStateAction<Options | null>>;
-  theme: Theme | null;
-  setTheme: Dispatch<SetStateAction<Theme | null>>;
-  isActive: Options | null;
-  setIsActive: Dispatch<SetStateAction<Options | null>>;
+  isActive: string | null;
+  setIsActive: Dispatch<SetStateAction<string | null>>;
 }
 
 export default function ButtonsOnScroll({
-  selectedOption,
-  setSelectedOption,
-  theme,
-  setTheme,
   isActive,
   setIsActive,
   lightLabel,
@@ -49,20 +41,8 @@ export default function ButtonsOnScroll({
     >
       <Time />
       <span className="h-6 w-[1px] bg-slate-200 dark:bg-slate-500"></span>
-      <div>
-        <Image
-          src="/eua-flag.png"
-          alt="EUA's flag"
-          width={64}
-          height={64}
-          className="h-7 w-7"
-        />
-      </div>
+      <LangButton />
       <ThemeSwitcher
-        selectedOption={selectedOption}
-        setSelectedOption={setSelectedOption}
-        theme={theme}
-        setTheme={setTheme}
         isActive={isActive}
         setIsActive={setIsActive}
         lightLabel={lightLabel}
