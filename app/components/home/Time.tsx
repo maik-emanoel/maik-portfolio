@@ -25,7 +25,7 @@ export default function Time() {
   return (
     <div className="text-xs text-terciary flex items-center gap-1">
       <span className={`block rounded-full w-1 h-1 ${isOnline ? 'bg-emerald-500' : 'bg-red-500'}`}></span>
-      <span>{hour}h{minutes.toString().padStart(2, "0")}</span>
+      <span suppressHydrationWarning>{hour}h{minutes.toString().padStart(2, "0")}</span>
     </div>
   );
 }
