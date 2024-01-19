@@ -1,7 +1,19 @@
 import { CaretRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
-export default function ProjectCard({ repoInfos }: any) {
+interface TProps {
+  titleTopic: string;
+  firstLink: string;
+  secondLink: string;
+}
+
+export default function ProjectCard({
+  repoInfos,
+  t,
+}: {
+  repoInfos: any;
+  t: TProps;
+}) {
   const formattedTitle = repoInfos.name.replace(/-/g, " ");
   const topicsWithoutMk = repoInfos.topics.filter(
     (topic: string) => topic != "mk"
@@ -20,7 +32,7 @@ export default function ProjectCard({ repoInfos }: any) {
         <div className="">
           <p className="text-muted my-6">{repoInfos.description}</p>
 
-          <h4 className="mb-3 text-muted">Technologies & libs:</h4>
+          <h4 className="mb-3 text-muted">{t.titleTopic}:</h4>
 
           {topicsWithoutMk.map((topic: string) => {
             return (
@@ -40,16 +52,22 @@ export default function ProjectCard({ repoInfos }: any) {
             target="_blank"
             className="flex items-center gap-1 group"
           >
-            View repository
-            <CaretRight weight="bold" className="mt-[2px] transition-transform duration-300 group-hover:translate-x-1" />
+            {t.firstLink}
+            <CaretRight
+              weight="bold"
+              className="mt-[2px] transition-transform duration-300 group-hover:translate-x-1"
+            />
           </a>
           <a
             href={repoInfos.homepage}
             target="_blank"
             className="flex items-center gap-1 text-blue-secondary group"
           >
-            Visit the app
-            <CaretRight weight="bold" className="mt-[2px] transition-transform duration-300 group-hover:translate-x-1" />
+            {t.secondLink}
+            <CaretRight
+              weight="bold"
+              className="mt-[2px] transition-transform duration-300 group-hover:translate-x-1"
+            />
           </a>
         </div>
       </div>
