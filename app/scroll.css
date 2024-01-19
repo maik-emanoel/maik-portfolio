@@ -1,0 +1,42 @@
+:root {
+  --scroll-blue-primary: rgb(47, 132, 255);
+  --scroll-blue-secondary: rgb(96, 165, 250);
+  --scroll-blue-topic: rgb(96, 165, 250);
+}
+
+html.dark {
+  --scroll-blue-primary: rgb(47, 132, 255);
+  --scroll-blue-secondary: rgb(96, 165, 250);
+  --scroll-blue-topic: rgb(30, 58, 138);
+}
+
+.scroll-reveal {
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view();
+  animation-range: entry contain 25%;
+  animation-duration: 1ms; /* Firefox requires this to apply the animation */
+  transform: translateX(60px);
+  opacity: 0;
+}
+
+@keyframes scroll-reveal {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* .scroll-reveal-text {
+  animation: scroll-reveal-text linear forwards;
+  animation-timeline: view();
+  animation-range: entry contain 50%;
+  animation-duration: 1ms; /* Firefox requires this to apply the animation   
+}
+*/
+
+@keyframes scroll-reveal-text {
+  to {
+    background-size: 100% 100%;
+  }
+}
+
