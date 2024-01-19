@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+import "@/app/scroll.css"
 import { Providers } from "../providers";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700"] });
