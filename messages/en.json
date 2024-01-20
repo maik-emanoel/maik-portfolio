@@ -15,6 +15,7 @@
   },
   "projects": {
     "section-name": "Projects",
+    "title-topic": "Technologies & libs",
     "first-link": "View repository",
     "second-link": "Visit the app"
   },
@@ -32,7 +33,7 @@
     }
   },
   "footer": {
-    "created-by": "Criado por"
+    "created-by": "Created by"
   },
   "floating-navbar": {
     "home": "Home",
