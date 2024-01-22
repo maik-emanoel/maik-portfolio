@@ -2,25 +2,15 @@ import { useTranslations } from "next-intl";
 
 // \u00A0
 
+const author = "Maik Emanoel"
+
 export default function IntroTitle() {
   const t = useTranslations("home.intro-text")
 
-  const firstPhrase = t("first-line"); // hi, I'm
-  const secondPhrase = t("second-line"); // a Front-end Developer
-
-  const firstPhraseArr = firstPhrase.split("").map((char, i) => (
+  const authorArr = author.split("").map((char, i) => (
     <span
       key={i}
-      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
-    >
-      {char === " " ? "\u00A0" : char}
-    </span>
-  ));
-
-  const secondPhraseArr = secondPhrase.split("").map((char, i) => (
-    <span
-      key={i}
-      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
+      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200 select-none"
     >
       {char === " " ? "\u00A0" : char}
     </span>
@@ -28,17 +18,13 @@ export default function IntroTitle() {
 
   return (
     <div className="leading-tight">
-      <span className="text-spanClamp">{firstPhraseArr}</span>
+      <span className="text-spanClamp">{t("first-line")}</span>
       <h1
-        className="font-bold text-titleClamp relative cursor-default text-transparent"
-        data-text="Maik Emanoel"
-        style={{
-          WebkitTextStroke: "1px #2F84FF",
-        }}
+        className="font-bold text-titleClamp relative cursor-default text-transparent fill-name"
       >
-        Maik Emanoel
+        {authorArr}
       </h1>
-      <p className="text-spanClamp">{secondPhraseArr}</p>
+      <p className="text-spanClamp">{t("second-line")}</p>
     </div>
   );
 }
