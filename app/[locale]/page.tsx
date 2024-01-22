@@ -1,3 +1,6 @@
+import { useTranslations } from "next-intl";
+import { Suspense } from "react";
+
 import BgEffect from "../components/BgEffect";
 import About from "../sections/About";
 import Home from "../sections/Home";
@@ -5,10 +8,10 @@ import FloatingNavbar from "@/app/components/FloatingNavbar";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
 import Footer from "../components/Footer";
-import { useTranslations } from "next-intl";
+import ProjectsLoading from "../components/projects/ProjectsLoading";
 
 export default function App() {
-  const t = useTranslations("floating-navbar")
+  const t = useTranslations("floating-navbar");
 
   const pillTabs = [
     {
@@ -16,15 +19,15 @@ export default function App() {
       path: "#home",
     },
     {
-      name:  t("about"),
+      name: t("about"),
       path: "#about",
     },
     {
-      name:  t("projects"),
+      name: t("projects"),
       path: "#projects",
     },
     {
-      name:  t("contact"),
+      name: t("contact"),
       path: "#contact ",
     },
   ];
@@ -34,7 +37,9 @@ export default function App() {
       <div className="max-w-[1000px] min-h-screen mx-auto px-5 flex flex-col relative">
         <Home />
         <About />
-        <Projects />
+        <Suspense fallback={<ProjectsLoading />}>
+          <Projects />
+        </Suspense>
         <Contact />
       </div>
 
