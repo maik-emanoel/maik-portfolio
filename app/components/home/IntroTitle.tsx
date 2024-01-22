@@ -21,6 +21,7 @@ export default function IntroTitle() {
       <span className="text-spanClamp">{t("first-line")}</span>
       <h1
         className="font-bold text-titleClamp relative cursor-default text-transparent fill-name"
+        data-author={author}
       >
         {authorArr}
       </h1>
