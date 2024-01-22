@@ -134,11 +134,11 @@ function Toast({
   return (
     <div
       role="alert"
-      className="fixed top-8 right-8 z-[999] flex items-center gap-4 rounded-lg p-4 text-terciary bg-blue-950 shadow overflow-hidden"
+      className="fixed top-8 right-8 z-[999] flex items-center gap-4 rounded-lg p-4 text-white dark:text-terciary bg-blue-950 shadow-lg overflow-hidden"
       style={{
         transform: toastIsVisible
           ? "translateX(0%)"
-          : "translateX(calc(100% + 30px))",
+          : "translateX(calc(100% + 100px))",
         transition: "all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35)",
       }}
     >
