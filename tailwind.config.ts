@@ -70,7 +70,7 @@ const config: Config = {
         },
         
         fadeOut: {
-          "100%": {scale: ".4", opacity: "0", display: 'none'}
+          "100%": {scale: ".4", opacity: "0"}
         },
 
         shimmer: {
