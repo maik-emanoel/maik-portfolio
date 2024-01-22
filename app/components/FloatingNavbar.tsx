@@ -23,7 +23,7 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
       const clientHeight = document.documentElement.clientHeight;
       const scrollHeight = document.documentElement.scrollHeight;
 
-      if (scrollTop + clientHeight + 80 >= scrollHeight) {
+      if (scrollTop + clientHeight + 70 >= scrollHeight) {
         setIsBottom(true);
       } else {
         setIsBottom(false);
