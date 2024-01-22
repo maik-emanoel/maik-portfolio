@@ -8,7 +8,7 @@ import { Pagination } from "swiper/modules";
 
 export default function ProjectsContent({ reposWithImage, t }: any) {
   return (
-    <div className="mt-11 md:mt-4">
+    <div className="w-full mt-11 md:mt-4">
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
@@ -18,6 +18,7 @@ export default function ProjectsContent({ reposWithImage, t }: any) {
           bulletClass: "bullet",
         }}
         modules={[Pagination]}
+        className="scroll-reveal"
       >
         {reposWithImage.map((repoWithImage: any) => {
           return (

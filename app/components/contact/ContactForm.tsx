@@ -62,7 +62,7 @@ export default function ContactForm({
 
   return (
     <form ref={formRef} onSubmit={sendEmail}>
-      <div className="relative group">
+      <div className="relative group scroll-reveal">
         <label htmlFor="name" className="sr-only">
           Name
         </label>
@@ -77,7 +77,7 @@ export default function ContactForm({
         />
       </div>
 
-      <div className="relative group">
+      <div className="relative group scroll-reveal">
         <label htmlFor="email" className="sr-only">
           Email
         </label>
@@ -92,7 +92,7 @@ export default function ContactForm({
         />
       </div>
 
-      <div className="relative group">
+      <div className="relative group scroll-reveal">
         <label htmlFor="message" className="sr-only">
           Message
         </label>
@@ -106,7 +106,7 @@ export default function ContactForm({
         />
       </div>
 
-      <button className="h-[52px] bg-secondary text-white dark:text-black px-6 rounded">
+      <button className="h-[52px] bg-secondary text-white dark:text-black px-6 rounded scroll-reveal">
         {buttonText}
       </button>
 

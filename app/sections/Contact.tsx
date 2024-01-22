@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <Section title={t("section-name")} id="contact" className="h-screen-mobile">
       <div className="mt-4 w-full h-fit">
-        <p className="text-sm text-muted mb-6">
+        <p className="text-sm text-muted mb-6 scroll-reveal">
           {t("label")}{" "}
           <a
             href="mailto:contato.maikemanoel@gmail.com"

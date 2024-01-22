@@ -76,7 +76,7 @@ export default function InfiniteSlider() {
     <div
       className={`overflow-hidden py-2 whitespace-nowrap text-terciary group relative slider logos-slide ${
         isTouchSupported ? `${before} ${after}` : ""
-      }`}
+      } scroll-reveal`}
     >
       <LogosSlide />
       <LogosSlide />
