@@ -17,7 +17,8 @@
     "section-name": "Projects",
     "title-topic": "Technologies & libs",
     "first-link": "View repository",
-    "second-link": "Visit the app"
+    "second-link": "Visit the app",
+    "message-loading": "Loading"
   },
   "contact": {
     "section-name": "Contact",
