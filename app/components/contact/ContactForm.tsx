@@ -7,15 +7,19 @@ import { FaTelegramPlane } from "react-icons/fa";
 interface ContactFormProps {
   placeholderName: string;
   placeholderMessage: string;
-  buttonText: string;
+  buttonTextNormalStatus: string;
+  buttonTextLoadingStatus: string;
   toastSuccessMessage: string;
   toastErrorMessage: string;
 }
 
+type ButtonStatus = "normal" | "loading";
+
 export default function ContactForm({
   placeholderName,
   placeholderMessage,
-  buttonText,
+  buttonTextNormalStatus,
+  buttonTextLoadingStatus,
   toastSuccessMessage,
   toastErrorMessage,
 }: ContactFormProps) {
@@ -27,6 +31,8 @@ export default function ContactForm({
 
   const [status, setStatus] = useState<null | number>(null);
   const [toastIsVisible, setToastIsVisible] = useState(false);
+
+  const [buttonStatus, setButtonStatus] = useState<ButtonStatus>("normal");
 
   function sendEmail(e: FormEvent) {
     e.preventDefault();
@@ -61,7 +67,18 @@ export default function ContactForm({
   }
 
   return (
-    <form ref={formRef} onSubmit={sendEmail}>
+    <form
+      ref={formRef}
+      onSubmit={(e: FormEvent) => {
+        e.preventDefault();
+        setButtonStatus("loading");
+
+        setTimeout(() => {
+          sendEmail(e);
+          setButtonStatus("normal");
+        }, 2000); // 2 seconds
+      }}
+    >
       <div className="relative group scroll-reveal">
         <label htmlFor="name" className="sr-only">
           Name
@@ -107,7 +124,11 @@ export default function ContactForm({
       </div>
 
       <button className="h-[52px] bg-secondary text-white dark:text-black px-6 rounded scroll-reveal">
-        {buttonText}
+        {buttonStatus === "loading" ? (
+          <span>{buttonTextLoadingStatus}...</span>
+        ) : (
+          <span>{buttonTextNormalStatus}</span>
+        )}
       </button>
 
       <Toast
@@ -124,12 +145,12 @@ function Toast({
   status,
   toastIsVisible,
   toastSuccessMessage,
-  toastErrorMessage
+  toastErrorMessage,
 }: {
   status: null | number;
   toastIsVisible: boolean;
-  toastSuccessMessage: string,
-  toastErrorMessage: string
+  toastSuccessMessage: string;
+  toastErrorMessage: string;
 }) {
   return (
     <div
@@ -148,9 +169,7 @@ function Toast({
         } `}
       />
       <p className="text-sm">
-        {status === 200
-          ? `${toastSuccessMessage}`
-          : `${toastErrorMessage}`}
+        {status === 200 ? `${toastSuccessMessage}` : `${toastErrorMessage}`}
       </p>
 
       <div

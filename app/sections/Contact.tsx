@@ -21,7 +21,8 @@ export default function Contact() {
         <ContactForm
           placeholderName={t("placeholder.name")}
           placeholderMessage={t("placeholder.message")}
-          buttonText={t("send-button")}
+          buttonTextNormalStatus={t("send-button.normal-status")}
+          buttonTextLoadingStatus={t("send-button.loading-status")}
           toastSuccessMessage={t("toast.success-message")}
           toastErrorMessage={t("toast.error-message")}
         />
