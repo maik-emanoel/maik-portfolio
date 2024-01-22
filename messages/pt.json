@@ -27,7 +27,10 @@
       "name": "Nome",
       "message": "Mensagem"
     },
-    "send-button": "Enviar mensagem",
+    "send-button": {
+      "normal-status": "Enviar mensagem",
+      "loading-status": "Enviando"
+    },
     "toast": {
       "success-message": "Mensagem enviada com sucesso.",
       "error-message": "Falha ao enviar mensagem."
