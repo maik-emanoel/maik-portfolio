@@ -24,7 +24,7 @@ export default function ThemeSwitcher({
   darkLabel,
   systemLabel,
 }: ThemeSwitcherProps) {
-  const [showOptions, setShowOptions] = useState(false);
+  const [showOptions, setShowOptions] = useState<null | boolean>(null);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const themeOptionsRef = useRef<HTMLDivElement | null>(null);
@@ -94,40 +94,42 @@ export default function ThemeSwitcher({
         {theme === "system" && <Desktop size={20} />}
       </div>
 
-      <div
-        ref={themeOptionsRef}
-        className={`absolute top-12 right-0 z-50 bg-background/60 backdrop-blur-lg shadow-lg overflow-hidden ${
-          showOptions ? "flex animate-fadeIn" : "animate-fadeOut"
-        } flex-col border border-slate-200 dark:border-slate-500 rounded-lg`}
-      >
-        <ThemeButton
-          name={lightLabel}
-          icon={Sun}
-          changeOption={() => {
-            changeOption("light");
-            setIsActive("light");
-          }}
-          isActive={isActive === "light"}
-        />
-        <ThemeButton
-          name={darkLabel}
-          icon={Moon}
-          changeOption={() => {
-            changeOption("dark");
-            setIsActive("dark");
-          }}
-          isActive={isActive === "dark"}
-        />
-        <ThemeButton
-          name={systemLabel}
-          icon={Desktop}
-          changeOption={() => {
-            changeOption("system");
-            setIsActive("system");
-          }}
-          isActive={isActive === "system"}
-        />
-      </div>
+      {showOptions !== null && (
+          <div
+          ref={themeOptionsRef}
+          className={`absolute top-12 right-0 z-50 bg-background/60 backdrop-blur-lg shadow-lg overflow-hidden ${
+            showOptions ? "flex animate-fadeIn" : "animate-fadeOut"
+          } flex-col border border-slate-200 dark:border-slate-500 rounded-lg`}
+        >
+          <ThemeButton
+            name={lightLabel}
+            icon={Sun}
+            changeOption={() => {
+              changeOption("light");
+              setIsActive("light");
+            }}
+            isActive={isActive === "light"}
+          />
+          <ThemeButton
+            name={darkLabel}
+            icon={Moon}
+            changeOption={() => {
+              changeOption("dark");
+              setIsActive("dark");
+            }}
+            isActive={isActive === "dark"}
+          />
+          <ThemeButton
+            name={systemLabel}
+            icon={Desktop}
+            changeOption={() => {
+              changeOption("system");
+              setIsActive("system");
+            }}
+            isActive={isActive === "system"}
+          />
+        </div>
+      )}
     </>
   );
 }
