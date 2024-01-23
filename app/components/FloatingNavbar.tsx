@@ -61,7 +61,7 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
   return (
     <div
       data-isbottom={isBottom}
-      className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-background dark:bg-slate-800/25 z-50 sm:gap-1 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-primary group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200 md:bottom-6 sm:data-[isbottom=true]:bottom-14 animate-reveal"
+      className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-background dark:bg-slate-800/25 z-50 sm:gap-1 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-primary group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200 md:bottom-6 sm:data-[isbottom=true]:bottom-12 animate-reveal"
       style={{
         boxShadow: "#00000040 0px 3px 8px",
         animationDelay: '2750ms',
