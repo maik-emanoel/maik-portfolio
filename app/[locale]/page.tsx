@@ -41,9 +41,9 @@ export default function App() {
           <Projects />
         </Suspense>
         <Contact />
+        <Footer />
       </div>
 
-      <Footer />
 
       <FloatingNavbar pillTabs={pillTabs} />
       <BgEffect />
