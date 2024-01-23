@@ -21,7 +21,8 @@ const config: Config = {
         toastProgress: "toastProgress 5s .3s forwards linear",
         scrollBounce: "scrollBounce .8s linear infinite alternate",
         fadeIn: "fadeIn .2s forwards",
-        fadeOut: "fadeOut .2s forwards"
+        fadeOut: "fadeOut .2s forwards",
+        reveal: "reveal .6s backwards",
       },
       keyframes: {
         rubberband: {
@@ -68,14 +69,18 @@ const config: Config = {
         fadeIn: {
           "0%": { scale: ".4", opacity: ".6" },
         },
-        
+
         fadeOut: {
-          "100%": {scale: ".4", opacity: "0"}
+          "100%": { scale: ".4", opacity: "0" },
         },
 
         shimmer: {
-          '100%': { transform: 'translateX(100%)' }
-        }
+          "100%": { transform: "translateX(100%)" },
+        },
+
+        reveal: {
+          "0%": { transform: "translateY(-10px)", opacity: '0' },
+        },
       },
       screens: {
         "2xl": { max: "1535px" },
