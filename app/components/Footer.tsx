@@ -11,7 +11,7 @@ export default function Footer() {
   const t = useTranslations("footer")
 
   return (
-    <footer className="relative max-w-[1000px] bottom-8 mx-auto px-5 flex justify-between items-center text-muted xs:bottom-4">
+    <footer className="absolute w-full left-0 bottom-6 mx-auto px-5 flex justify-between items-center text-muted xs:bottom-4">
       <p className="text-xs">{t("created-by")} Maik Emanoel</p>
 
       <div className="flex gap-4 xs:gap-2">
