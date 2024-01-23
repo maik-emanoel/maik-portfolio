@@ -11,6 +11,7 @@ import {
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { HeaderButtonsProps } from "./HeaderButtons";
 import { useTheme } from "next-themes";
+import { useIsTouchSupported } from "@/app/utils/touchUtils";
 
 interface ThemeSwitcherProps extends HeaderButtonsProps {
   isActive: string | null;
@@ -28,6 +29,7 @@ export default function ThemeSwitcher({
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const themeOptionsRef = useRef<HTMLDivElement | null>(null);
+  const isTouchSupported = useIsTouchSupported()
 
   useEffect(() => setMounted(true), []);
 
@@ -37,6 +39,8 @@ export default function ThemeSwitcher({
 
   useEffect(() => {
     function handleClickOutsideShowOptions(e: MouseEvent) {
+      if (isTouchSupported) return setShowOptions(false)
+
       if (
         themeOptionsRef.current &&
         !themeOptionsRef.current?.contains(e.target as Node)
@@ -62,7 +66,7 @@ export default function ThemeSwitcher({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("click", handleClickOutsideShowOptions);
     };
-  }, [showOptions]);
+  }, [isTouchSupported, showOptions]);
 
   if (!mounted) {
     return (
