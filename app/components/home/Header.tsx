@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header className="py-5 flex items-center justify-between h-20">
-      <div>
+      <div className="animate-reveal">
         <Image
           src="/logo.png"
           alt=""

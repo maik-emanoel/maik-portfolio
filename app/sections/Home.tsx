@@ -1,4 +1,8 @@
-import { CaretDown, DownloadSimple, GithubLogo } from "@phosphor-icons/react/dist/ssr";
+import {
+  CaretDown,
+  DownloadSimple,
+  GithubLogo,
+} from "@phosphor-icons/react/dist/ssr";
 import Header from "../components/home/Header";
 import IntroTitle from "../components/home/IntroTitle";
 import Image from "next/image";
@@ -6,14 +10,22 @@ import { Icon } from "@phosphor-icons/react/dist/lib/index";
 
 export default function Home() {
   return (
-    <div className="h-screen max-h-[768px] flex flex-col relative sm:h-screen-mobile" id="home">
+    <div
+      className="h-screen max-h-[768px] flex flex-col relative sm:h-screen-mobile"
+      id="home"
+    >
       <Header />
 
       <main className="flex-1 max-h-[500px] flex items-center justify-between md:flex-col-reverse md:justify-center md:gap-6">
         <div>
           <IntroTitle />
 
-          <div className="mt-4 flex items-center gap-2">
+          <div
+            className="mt-4 flex items-center gap-2 animate-reveal"
+            style={{
+              animationDelay: "1300ms",
+            }}
+          >
             <LinkButton
               icon={DownloadSimple}
               text="Download CV"
@@ -27,8 +39,10 @@ export default function Home() {
             />
           </div>
         </div>
-        
-        <div className="w-[300px] h-[300px] p-3 rounded-full relative overflow-hidden md:w-52 md:h-52">
+
+        <div
+          className="w-[300px] h-[300px] p-3 rounded-full relative overflow-hidden md:w-52 md:h-52 animate-[reveal_.6s_backwards_2000ms] md:animate-[reveal_.6s_backwards_600ms]"
+        >
           <Image
             src="/profile-photo.jpg"
             width={1536}
@@ -41,7 +55,7 @@ export default function Home() {
           <div className="absolute inset-0 border border-t-muted border-b-muted rounded-full border-r-transparent border-l-transparent animate-spin-slow"></div>
         </div>
 
-        <CaretDown className="hidden sm:block absolute left-1/2 -translate-x-[50%] bottom-[15%] animate-scrollBounce"/>
+        <CaretDown className="hidden sm:block absolute left-1/2 -translate-x-[50%] bottom-[15%] animate-scrollBounce" />
       </main>
     </div>
   );

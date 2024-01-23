@@ -67,7 +67,10 @@ export default function ThemeSwitcher({
   if (!mounted) {
     return (
       <div
-        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10"
+        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10 animate-reveal"
+        style={{
+          animationDelay: "600ms",
+        }}
         onClick={handleShowOptions}
       >
         <CircleNotch size={20} className="animate-spin" />
@@ -95,7 +98,7 @@ export default function ThemeSwitcher({
       </div>
 
       {showOptions !== null && (
-          <div
+        <div
           ref={themeOptionsRef}
           className={`absolute top-12 right-0 z-50 bg-background/60 backdrop-blur-lg shadow-lg overflow-hidden ${
             showOptions ? "flex animate-fadeIn" : "animate-fadeOut"

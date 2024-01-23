@@ -61,7 +61,10 @@ export default function LangButton() {
   if (!mounted) {
     return (
       <div
-        className={`${shimmer} relative h-7 w-7 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden`}
+        className={`${shimmer} relative h-7 w-7 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden animate-reveal`}
+        style={{
+          animationDelay: "450ms",
+        }}
       ></div>
     );
   }

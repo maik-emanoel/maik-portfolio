@@ -20,7 +20,12 @@ export default function HeaderButtons(props: HeaderButtonsProps) {
     <>
       <div className="flex items-center gap-2 relative">
         <Time />
-        <span className="h-6 w-[1px] bg-slate-200 dark:bg-slate-500"></span>
+        <span
+          className="h-6 w-[1px] bg-slate-200 dark:bg-slate-500 animate-reveal"
+          style={{
+            animationDelay: "300ms",
+          }}
+        ></span>
         <LangButton />
         <ThemeSwitcher
           isActive={isActive}

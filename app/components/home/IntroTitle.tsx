@@ -2,10 +2,10 @@ import { useTranslations } from "next-intl";
 
 // \u00A0
 
-const author = "Maik Emanoel"
+const author = "Maik Emanoel";
 
 export default function IntroTitle() {
-  const t = useTranslations("home.intro-text")
+  const t = useTranslations("home.intro-text");
 
   const authorArr = author.split("").map((char, i) => (
     <span
@@ -18,14 +18,28 @@ export default function IntroTitle() {
 
   return (
     <div className="leading-tight">
-      <span className="text-spanClamp">{t("first-line")}</span>
+      <span
+        className="text-spanClamp animate-reveal block"
+        style={{
+          animationDelay: "750ms",
+        }}
+      >
+        {t("first-line")}
+      </span>
       <h1
         className="font-bold text-titleClamp relative cursor-default text-transparent fill-name"
         data-author={author}
       >
         {authorArr}
       </h1>
-      <p className="text-spanClamp">{t("second-line")}</p>
+      <p
+        className="text-spanClamp animate-reveal"
+        style={{
+          animationDelay: "1150ms",
+        }}
+      >
+        {t("second-line")}
+      </p>
     </div>
   );
 }
