@@ -14,6 +14,7 @@ export default function Header() {
           width={1500}
           height={156}
           className="w-36 object-cover my-2 hidden dark:inline-block"
+          priority
         />
         <Image
           src="/logo-dark.svg"
@@ -21,6 +22,7 @@ export default function Header() {
           width={1500}
           height={156}
           className="w-36 object-cover my-2 inline-block dark:hidden"
+          priority
         />
       </div>
 
