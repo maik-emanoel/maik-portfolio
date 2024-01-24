@@ -9,7 +9,7 @@ interface SectionProps extends React.HTMLProps<HTMLDivElement> {
 
 export default function Section({ id, title, children, className }: SectionProps) {
   return (
-    <section id={id} className={twMerge('h-screen pt-10 max-h-[768px] overflow-clip', className)}>
+    <section id={id} className={twMerge('h-screen pt-10 max-h-[768px] overflow-clip', className)} data-section={id}>
       <h2 className="w-fit text-titleClamp text-blue-secondary font-bold scroll-reveal">{title}</h2>
       {children}
     </section>

@@ -13,6 +13,7 @@ export default function Home() {
     <div
       className="h-screen max-h-[768px] flex flex-col relative sm:h-screen-mobile"
       id="home"
+      data-section="home"
     >
       <Header />
 
