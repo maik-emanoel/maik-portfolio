@@ -105,7 +105,7 @@ export default function ThemeSwitcher({
         <div
           ref={themeOptionsRef}
           className={`absolute top-12 right-0 z-50 bg-background/60 backdrop-blur-lg shadow-lg overflow-hidden ${
-            showOptions ? "flex animate-fadeIn" : "animate-fadeOut"
+            showOptions ? "flex animate-fadeIn" : "animate-fadeOut pointer-events-none"
           } flex-col border border-slate-200 dark:border-slate-500 rounded-lg`}
         >
           <ThemeButton

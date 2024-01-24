@@ -62,7 +62,7 @@
     background-size: 0% 100%;
     background-repeat: no-repeat;
 
-    animation: fill 5s 1s linear forwards;
+    animation: fill 3s 1s linear forwards;
   }
 
   .logos-slide:has(.logo:hover) .logo:not(:hover) {
