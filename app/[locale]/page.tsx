@@ -28,7 +28,7 @@ export default function App() {
     },
     {
       name: t("contact"),
-      path: "#contact ",
+      path: "#contact",
     },
   ];
 
