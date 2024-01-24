@@ -3,6 +3,7 @@
 import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useRef, useState } from "react";
 import { MagicTabSelect } from "react-magic-motion";
+import { useIsTouchSupported } from "../utils/touchUtils";
 
 interface FloatingNavbarProps {
   pillTabs: {
@@ -14,6 +15,7 @@ interface FloatingNavbarProps {
 export default function FloatingNavbar(props: FloatingNavbarProps) {
   const { pillTabs } = props;
 
+  const isTouchSupported = useIsTouchSupported();
   const [isBottom, setIsBottom] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>("home");
   const sections = useRef<NodeListOf<HTMLElement> | []>([]);
@@ -24,7 +26,10 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
     sections.current.forEach((section) => {
       const rect = section.getBoundingClientRect();
 
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      if (
+        rect.top <= window.innerHeight / 2 &&
+        rect.bottom >= window.innerHeight / 2
+      ) {
         newActiveSection = section.id;
       }
     });
@@ -65,7 +70,10 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
       <a
         key={tab.name}
         href={tab.path}
-        className="relative rounded-full sm:text-sm sm:px-2 sm:py-2 xs:text-xs"
+        data-istouchsupported={isTouchSupported}
+        className={`relative rounded-full sm:text-sm sm:px-2 sm:py-2 xs:text-xs ${
+          activeSection === tabPathWithoutHash ? "" : "data-[istouchsupported=false]:hover:bg-primary/5"
+        } transition-colors duration-700`}
         style={{
           padding: "0.65rem 0.75rem",
         }}
