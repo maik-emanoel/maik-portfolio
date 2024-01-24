@@ -1,21 +1,45 @@
 "use client";
 
 import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MagicTabSelect } from "react-magic-motion";
 
 interface FloatingNavbarProps {
   pillTabs: {
-    name: string,
-    path: string
-  }[]
+    name: string;
+    path: string;
+  }[];
 }
 
 export default function FloatingNavbar(props: FloatingNavbarProps) {
-  const { pillTabs } = props
+  const { pillTabs } = props;
 
-  const [hoveredIndex, setHoveredIndex] = useState(0);
   const [isBottom, setIsBottom] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>("home");
+  const sections = useRef<NodeListOf<HTMLElement> | []>([]);
+
+  function handleActiveSection() {
+    let newActiveSection: string | null = null;
+
+    sections.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        newActiveSection = section.id;
+      }
+    });
+
+    setActiveSection(newActiveSection);
+  }
+
+  useEffect(() => {
+    sections.current = document.querySelectorAll<HTMLElement>("[data-section]");
+    window.addEventListener("scroll", handleActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", handleActiveSection);
+    };
+  }, []);
 
   useEffect(() => {
     function handleScroll() {
@@ -35,17 +59,18 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
   }, []);
 
   const tabsComponents = pillTabs.map((tab, i) => {
+    const tabPathWithoutHash = tab.path.replace("#", "");
+
     return (
       <a
         key={tab.name}
-        onMouseEnter={() => setHoveredIndex(i)}
         href={tab.path}
         className="relative rounded-full sm:text-sm sm:px-2 sm:py-2 xs:text-xs"
         style={{
           padding: "0.65rem 0.75rem",
         }}
       >
-        {hoveredIndex === i && (
+        {activeSection === tabPathWithoutHash && (
           <MagicTabSelect
             id="pillTabs"
             transition={{ type: "spring", bounce: 0.35 }}
@@ -63,13 +88,16 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
       data-isbottom={isBottom}
       className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-background dark:bg-slate-800/25 z-50 sm:gap-1 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-primary group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200 md:bottom-6 sm:data-[isbottom=true]:bottom-12 reveal-floatingNavbar"
       style={{
-        boxShadow: "#00000040 0px 3px 8px"
+        boxShadow: "#00000040 0px 3px 8px",
       }}
     >
       {!isBottom ? (
         tabsComponents
       ) : (
-        <a href="#home" className="p-3 group-hover:text-white dark:group-hover:text-black">
+        <a
+          href="#home"
+          className="p-3 group-hover:text-white dark:group-hover:text-black"
+        >
           <ArrowUp size={20} />
         </a>
       )}
