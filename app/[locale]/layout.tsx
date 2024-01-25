@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700"] });
 export const metadata: Metadata = {
   title: "Maik Emanoel | Portfolio",
   description:
-    "Welcome to Maik Emanoel's dynamic portfolio, a showcase crafted with Next.js and Tailwind. Dive into my world of web development, where each project is a unique journey. Explore the intersection of creativity and technology, test out interactive features, and discover how I bring ideas to life. Let's connect and explore the possibilities together. Your digital journey starts here!",
+    "Explore Maik Emanoel's dynamic portfolio, built with Next.js and Tailwind. Dive into a world of web development, where each project is a unique journey. Discover the intersection of creativity and technology. Let's connect and explore the possibilities together. Your digital journey starts here!",
   creator: "Maik Emanoel",
   keywords: [
     "Web Development",
