@@ -1,5 +1,6 @@
 "use client";
 
+import { useMessages } from "next-intl";
 import { useState, useEffect } from "react";
 
 export default function Time() {
@@ -19,15 +20,23 @@ export default function Time() {
     return () => clearInterval(interval);
   }, []);
 
-  const hour = time.getHours();
-  const minutes = time.getMinutes();
+  const options = {
+    timeZone: "America/Sao_Paulo", // Brazil time zone
+    hour12: false
+  };
 
+  const formattedTime = time.toLocaleTimeString("pt-BR", options)
+
+  const hour = formattedTime.split(":")[0];
+  const minutes = formattedTime.split(":")[1];
+  
   return (
     <div
-      className="text-xs text-terciary flex items-center gap-1 animate-reveal"
+      className="text-xs text-terciary flex items-center gap-1 cursor-default animate-reveal"
       style={{
         animationDelay: "150ms",
       }}
+      title="Brazil time zone"
     >
       <span
         className={`block rounded-full w-1 h-1 ${
@@ -35,7 +44,7 @@ export default function Time() {
         }`}
       ></span>
       <span suppressHydrationWarning>
-        {hour}h{minutes.toString().padStart(2, "0")}
+        {hour}h{minutes}
       </span>
     </div>
   );
