@@ -80,6 +80,7 @@ export default function ProjectCard({
           width={2880}
           height={1800}
           className="aspect-video rounded-lg shadow-md"
+          priority
           unoptimized
         />
       </div>
