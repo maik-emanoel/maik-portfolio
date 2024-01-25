@@ -21,6 +21,7 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
   const sections = useRef<NodeListOf<HTMLElement> | []>([]);
 
   function handleActiveSection() {
+    sections.current = document.querySelectorAll<HTMLElement>("[data-section]");
     let newActiveSection: string | null = null;
 
     sections.current.forEach((section) => {
@@ -38,7 +39,6 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
   }
 
   useEffect(() => {
-    sections.current = document.querySelectorAll<HTMLElement>("[data-section]");
     window.addEventListener("scroll", handleActiveSection);
 
     return () => {
