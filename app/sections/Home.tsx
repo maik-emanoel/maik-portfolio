@@ -46,11 +46,14 @@ export default function Home() {
         >
           <Image
             src="/profile-photo.jpg"
-            width={1536}
-            height={2048}
+            width={868}
+            height={1080}
             alt="Foto de perfil de Maik Emanoel"
             priority
-            className="w-full h-full rounded-full object-cover object-top"
+            className="w-full h-full rounded-full object-cover"
+            style={{
+              objectPosition: '0 -20px'
+            }}
           />
 
           <div className="absolute inset-0 border border-t-muted border-b-muted rounded-full border-r-transparent border-l-transparent animate-spin-slow"></div>
