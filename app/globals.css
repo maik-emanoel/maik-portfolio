@@ -29,7 +29,8 @@
     --bullet-color: rgb(255, 255, 255);
   }
 
-  input, textarea {
+  input,
+  textarea {
     background: transparent;
   }
 
@@ -57,7 +58,11 @@
   }
 
   .fill-name {
-    background-image: linear-gradient(90deg, rgb(47, 132, 255), rgb(96, 165, 250));
+    background-image: linear-gradient(
+      90deg,
+      rgb(47, 132, 255),
+      rgb(96, 165, 250)
+    );
     background-clip: text;
     background-size: 0% 100%;
     background-repeat: no-repeat;
@@ -66,8 +71,8 @@
   }
 
   .logos-slide:has(.logo:hover) .logo:not(:hover) {
-    opacity: .3;
-    scale: .95;
+    opacity: 0.3;
+    scale: 0.95;
   }
 
   .bullet {
@@ -78,17 +83,35 @@
     margin-inline: 4px;
     border-radius: 100%;
     cursor: pointer;
-    opacity: .3;
-    transition: scale .3s;
+    opacity: 0.3;
+    transition: scale 0.3s;
   }
 
   .bullet-active {
     background: var(--bullet-color);
-    opacity: .9;
+    opacity: 0.9;
     scale: 1.5;
   }
 
   .reveal-floatingNavbar {
-    animation: reveal-floatingNavbar .6s 2750ms backwards;
+    animation: reveal-floatingNavbar 0.6s 2750ms backwards;
+  }
+
+  html::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .2);
+    border-radius: 999px;
+  }
+
+  html.dark::-webkit-scrollbar-thumb {
+    background: rgba(96, 165, 250, .2);
+    border-radius: 999px;
   }
 }
