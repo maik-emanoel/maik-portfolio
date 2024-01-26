@@ -4,14 +4,15 @@ import "@/app/globals.css";
 import "@/app/scroll.css";
 import { Providers } from "../providers";
 import favicon from "@/public/favicon.svg";
-import openGraphImage from "@/app/opengraph-image.png";
+import openGraphImage from "@/app/[locale]/opengraph-image.png"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: "Maik Emanoel | Portfolio",
   description:
-    "Explore Maik Emanoel's dynamic portfolio, built with Next.js and Tailwind. Dive into a world of web development, where each project is a unique journey. Discover the intersection of creativity and technology. Let's connect and explore the possibilities together. Your digital journey starts here!",
+    "Welcome to Maik Emanoel's portfolio, built with Next.js and Tailwind. Dive into a world of web development, where each project is a unique journey. Discover the intersection of creativity and technology. Let's connect and explore the possibilities together. Your digital journey starts here!",
   creator: "Maik Emanoel",
   keywords: [
     "Web Development",
@@ -25,12 +26,9 @@ export const metadata: Metadata = {
   ],
   icons: [{ rel: "icon", url: favicon.src }],
   openGraph: {
-    images: [
-      {
-        url: openGraphImage.src,
-        alt: 'An image with the title "Maik Emanoel | Portfolio" and below it has three mockups with preview image of the "Maik Emanoel | Portfolio" website.',
-      },
-    ],
+    title: 'Maik Emanoel | Portfolio',
+    description: "Welcome to Maik Emanoel's portfolio, built with Next.js and Tailwind.",
+    images: openGraphImage.src,
   },
 };
 
