@@ -10,7 +10,7 @@ export default function IntroTitle() {
   const authorArr = author.split("").map((char, i) => (
     <span
       key={i}
-      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200 select-none"
+      className="hover:animate-rubberband hover:text-[#f4a949] inline-block cursor-default transition-colors duration-200"
     >
       {char === " " ? "\u00A0" : char}
     </span>
