@@ -9,7 +9,7 @@ import openGraphImage from "@/app/[locale]/opengraph-image.png"
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL('https://maik-emanoel.vercel.app'),
   title: "Maik Emanoel | Portfolio",
   description:
     "Welcome to Maik Emanoel's portfolio, built with Next.js and Tailwind. Dive into a world of web development, where each project is a unique journey. Discover the intersection of creativity and technology. Let's connect and explore the possibilities together. Your digital journey starts here!",
