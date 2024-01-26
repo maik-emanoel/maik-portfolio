@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import "@/app/scroll.css";
 import { Providers } from "../providers";
 import favicon from "@/public/favicon.svg";
+import openGraphImage from "@/app/opengraph-image.png";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
@@ -23,6 +24,14 @@ export const metadata: Metadata = {
     "Tailwind",
   ],
   icons: [{ rel: "icon", url: favicon.src }],
+  openGraph: {
+    images: [
+      {
+        url: openGraphImage.src,
+        alt: 'An image with the title "Maik Emanoel | Portfolio" and below it has three mockups with preview image of the "Maik Emanoel | Portfolio" website.',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
