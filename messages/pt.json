@@ -3,7 +3,8 @@
     "intro-text": {
       "first-line": "olá, eu sou",
       "second-line": "um Desenvolvedor Front-end"
-    }
+    },
+    "download-button": "Baixar"
   },
   "about": {
     "section-name": "Sobre",

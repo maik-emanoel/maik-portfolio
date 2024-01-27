@@ -3,7 +3,8 @@
     "intro-text": {
       "first-line": "hi, I'm",
       "second-line": "a Front-end Developer"
-    }
+    },
+    "download-button": "Download"
   },
   "about": {
     "section-name": "About",
