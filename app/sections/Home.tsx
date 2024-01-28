@@ -7,8 +7,11 @@ import Header from "../components/home/Header";
 import IntroTitle from "../components/home/IntroTitle";
 import Image from "next/image";
 import { Icon } from "@phosphor-icons/react/dist/lib/index";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("home")
+
   return (
     <div
       className="h-screen max-h-[768px] flex flex-col relative sm:h-screen-mobile"
@@ -29,7 +32,7 @@ export default function Home() {
           >
             <LinkButton
               icon={DownloadSimple}
-              text="Download CV"
+              text={`${t("download-button")} CV`}
               path="/curriculo-maik-dev.pdf"
               isDownloadButton
             />
