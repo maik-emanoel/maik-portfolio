@@ -4,7 +4,7 @@
 
 [Clique aqui para acessar](https://maik-emanoel.vercel.app/)
 
-<p>Case you want see in pt-br, click in the link below:</p>
+<p>Case you want to see in pt-br, click in the link below:</p>
 
 [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/maik-emanoel/maik-portfolio/blob/main/README.pt-br.md)
 
@@ -31,7 +31,9 @@ This is my portfolio—a space where you can know more about me and my skills. D
 
 ## 🔧 Functionalities
 
-- Three available  theme options: Dark, light and system preference.;
+- Three available  theme options: Dark, light and system preference;
+- Responsive layout;
+- Background cursor effect;
 - Multilingual Support;
 - Scroll animations;
 - Active section highlight;

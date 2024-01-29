@@ -32,6 +32,8 @@ Este é o meu portfólio – um espaço onde você pode saber mais sobre mim e m
 ## 🔧 Funcionalidades
 
 - Três opções de temas disponíveis: Escuro, claro e preferência de sistema;
+- Layout responsivo;
+- Efeito de cursor de fundo;
 - Suporte multilíngue;
 - Animações de rolagem;
 - Destaque da seção ativa;
