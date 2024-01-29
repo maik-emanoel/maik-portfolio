@@ -1,10 +1,12 @@
 <h1 align="center"> Maik Emanoel | Portfolio </h1>
 
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/maik-emanoel/maik-portfolio/blob/main/README.md)
-
 ![preview](./.github/preview.png)
 
 [Clique aqui para acessar](https://maik-emanoel.vercel.app/)
+
+<p>Caso você queira ver em en-US, clique no link abaixo:</p>
+
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/maik-emanoel/maik-portfolio/blob/main/README.md)
 
 ## 🚀 Tecnologias
 

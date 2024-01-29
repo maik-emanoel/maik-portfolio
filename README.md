@@ -1,10 +1,12 @@
 <h1 align="center"> Maik Emanoel | Portfolio </h1>
 
-[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/maik-emanoel/maik-portfolio/blob/main/README.pt-br.md)
-
 ![preview](./.github/preview.png)
 
 [Clique aqui para acessar](https://maik-emanoel.vercel.app/)
+
+<p>Case you want see in pt-br, click in the link below:</p>
+
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/maik-emanoel/maik-portfolio/blob/main/README.pt-br.md)
 
 ## 🚀 Technologies
 
