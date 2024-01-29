@@ -1,6 +1,6 @@
 <h1 align="center"> Maik Emanoel | Portfolio </h1>
 
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/maik-emanoel/maik-portfolio/blob/master/README.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/maik-emanoel/maik-portfolio/blob/main/README.md)
 
 ![preview](./.github/preview.png)
 
