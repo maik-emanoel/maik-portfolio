@@ -123,7 +123,10 @@ export default function ContactForm({
         />
       </div>
 
-      <button className="h-[52px] bg-secondary text-white dark:text-black px-6 rounded scroll-reveal">
+      <button
+        className="h-[52px] bg-secondary text-white dark:text-black px-6 rounded disabled:bg-secondary/80 scroll-reveal select-none"
+        disabled={buttonStatus === "loading"}
+      >
         {buttonStatus === "loading" ? (
           <span>{buttonTextLoadingStatus}...</span>
         ) : (
