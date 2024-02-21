@@ -1,10 +1,5 @@
-import {
-  DiscordLogo,
-  GithubLogo,
-  InstagramLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react/dist/ssr";
-import { IconProps } from "@phosphor-icons/react";
+import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {IconBaseProps} from 'react-icons'
 import { useTranslations } from "next-intl";
 
 export default function Footer() {
@@ -17,22 +12,22 @@ export default function Footer() {
       <div className="flex gap-4 xs:gap-2">
         <SocialLink
           path="https://github.com/maik-emanoel"
-          icon={GithubLogo}
+          icon={FaGithub}
           name="Github"
         />
         <SocialLink
           path="https://linkedin.com/in/maik-emanoel-b21539269"
-          icon={LinkedinLogo}
+          icon={FaLinkedin}
           name="LinkedIn"
         />
         <SocialLink
           path="https://instagram.com/maik.emanoel"
-          icon={InstagramLogo}
+          icon={FaInstagram}
           name="Instagram"
         />
         <SocialLink
           path="https://discordapp.com/users/469542084349526016"
-          icon={DiscordLogo}
+          icon={FaDiscord}
           name="Discord"
         />
       </div>
@@ -43,7 +38,7 @@ export default function Footer() {
 interface SocialLinkProps {
   name: string;
   path: string;
-  icon: React.ElementType<IconProps>;
+  icon: React.ElementType<IconBaseProps>;
 }
 
 function SocialLink({ name, path, icon: Icon }: SocialLinkProps) {
