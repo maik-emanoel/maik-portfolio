@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import InfiniteSlider from "../components/about/InfiniteSlider";
 import Section from "../components/Section";
+import ViewAllButton from "../components/about/ViewAllButton";
 
 export default function About() {
   const t = useTranslations("about");
@@ -27,9 +28,13 @@ export default function About() {
         </div>
 
         <div>
-          <h3 className="w-fit text-3xl text-terciary mb-10 sm:text-2xl sm:mb-4 scroll-reveal">
-            {t("second-subtitle")}
-          </h3>
+          <div className="flex justify-between mb-10 sm:mb-4">
+            <h3 className="w-fit text-3xl text-terciary sm:text-2xl scroll-reveal">
+              {t("second-subtitle")}
+            </h3>
+
+            <ViewAllButton />
+          </div>
           <InfiniteSlider />
         </div>
       </div>
