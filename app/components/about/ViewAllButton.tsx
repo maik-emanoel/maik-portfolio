@@ -2,34 +2,55 @@
 
 import { logos } from "@/app/lib/about-logos";
 import { X } from "@phosphor-icons/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, MouseEvent } from "react";
 
 export default function ViewAllButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function handleClick() {
-    setIsModalOpen(true);
-  }
+  const portalRef = useRef(null);
 
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflowY = "hidden";
+      window.addEventListener("keydown", handleCloseModalWithHotkey);
     } else {
       document.body.style.overflowY = "initial";
     }
+
+    return () => window.removeEventListener("keydown", handleCloseModalWithHotkey);
   }, [isModalOpen]);
+
+  function handleShowModal() {
+    setIsModalOpen(true);
+  }
+
+  function handleCloseModal(e: MouseEvent) {
+    if (e.target === portalRef.current) {
+      setIsModalOpen(false);
+    }
+  }
+
+  function handleCloseModalWithHotkey(e: KeyboardEvent) {
+    console.log('oi')
+    if (e.key === 'Escape') {
+      setIsModalOpen(false)
+    }
+  }
 
   return (
     <>
       <span
         className="self-end text-sm text-blue-primary cursor-pointer hover:text-blue-secondary"
-        onClick={handleClick}
+        onClick={handleShowModal}
       >
         View all
       </span>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/60 z-[999]">
+        <div
+          className="fixed inset-0 bg-black/60 z-[999]"
+          ref={portalRef}
+          onClick={handleCloseModal}
+        >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-2xl w-[75%] px-8 py-7 pr-6 rounded-lg h-[70vh] bg-background flex flex-col gap-8 shadow-xl">
             <h3 className="text-3xl">All my stacks</h3>
             <X
