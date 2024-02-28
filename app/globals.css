@@ -128,8 +128,8 @@
     border-radius: 999px;
   }
 
-  .logos-scrollbar.dark::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, .8);
+  html.dark .logos-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .4);
     border-radius: 999px;
   }
 }
