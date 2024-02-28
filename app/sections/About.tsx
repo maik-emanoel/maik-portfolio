@@ -5,7 +5,6 @@ import ViewAllButton from "../components/about/ViewAllButton";
 
 export default function About() {
   const t = useTranslations("about");
-
   return (
     <Section
       id="about"
@@ -28,12 +27,12 @@ export default function About() {
         </div>
 
         <div>
-          <div className="flex justify-between mb-10 sm:mb-4">
-            <h3 className="w-fit text-3xl text-terciary sm:text-2xl scroll-reveal">
+          <div className="flex justify-between items-center mb-10 sm:mb-4">
+            <h3 className="w-fit text-3xl text-terciary sm:text-2xl xs:text-xl scroll-reveal">
               {t("second-subtitle")}
             </h3>
 
-            <ViewAllButton />
+            <ViewAllButton viewAllButtonTitle={t("view-all.view-all-button-title")} />
           </div>
           <InfiniteSlider />
         </div>
