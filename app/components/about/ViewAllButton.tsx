@@ -57,13 +57,17 @@ export default function ViewAllButton({
           ref={portalRef}
           onClick={handleCloseModal}
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-2xl w-[75%] px-8 py-7 pr-6 rounded-lg h-[70vh] bg-background flex flex-col gap-8 shadow-xl border border-white/10 sm:w-screen sm:h-dvh sm:rounded-none">
+          <div
+            role="dialog"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-2xl w-[75%] px-8 py-7 pr-6 rounded-lg h-[70vh] bg-background flex flex-col gap-8 shadow-xl border border-white/10 sm:w-screen sm:h-dvh sm:rounded-none"
+          >
             <h3 className="text-3xl font-medium">All my stacks</h3>
-            <X
-              size={24}
-              className="absolute top-4 right-4 rounded-full bg-white/10 p-1 cursor-pointer"
-              onClick={() => setIsModalOpen(false)}
-            />
+            <button type="button" onClick={() => setIsModalOpen(false)}>
+              <X
+                size={24}
+                className="absolute top-4 right-4 rounded-full bg-white/10 p-1 cursor-pointer"
+              />
+            </button>
             <div
               className="flex-1 grid gap-5 overflow-y-auto logos-scrollbar pr-4"
               style={{
