@@ -66,7 +66,7 @@ export default function ViewAllButton({
             <h3 className="text-3xl font-medium sm:text-2xl">{title}</h3>
             <X
               size={24}
-              className="absolute top-4 right-4 rounded-full bg-white/10 p-1 cursor-pointer transition-colors duration-200 hover:bg-white/20"
+              className="absolute top-4 right-4 rounded-full bg-black/5 hover:bg-black/10 dark:bg-white/10 p-1 cursor-pointer transition-colors duration-200 dark:hover:bg-white/20"
               onClick={() => setIsModalOpen(false)}
             />
             <div
@@ -76,11 +76,14 @@ export default function ViewAllButton({
                 gridAutoRows: "max-content",
               }}
             >
-              {logos.map((logo) => {
+              {logos.map((logo, i) => {
                 return (
                   <div
                     key={logo.name}
-                    className="flex flex-col gap-3 justify-center items-center border border-muted rounded-md text-muted py-4 px-2 h-[92px] transition duration-200 hover:border-primary hover:text-primary"
+                    className="flex flex-col gap-3 justify-center items-center border border-muted rounded-md text-muted py-4 px-2 h-[92px] transition duration-200 hover:border-secondary hover:text-secondary dark:hover:border-primary dark:hover:text-primary animate-logoFromLeft"
+                    style={{
+                      animationDelay: `${250 * i}ms`
+                    }}
                   >
                     <logo.image size={24} />
                     <span className="w-full text-xs text-center overflow-hidden whitespace-nowrap text-ellipsis cursor-default">
