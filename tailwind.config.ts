@@ -23,6 +23,7 @@ const config: Config = {
         fadeIn: "fadeIn .2s forwards",
         fadeOut: "fadeOut .2s forwards",
         reveal: "reveal .6s backwards",
+        logoFromLeft: "logoFromLeft .8s backwards"
       },
       keyframes: {
         rubberband: {
@@ -81,6 +82,10 @@ const config: Config = {
         reveal: {
           "0%": { transform: "translateY(-10px)", opacity: '0' },
         },
+
+        logoFromLeft: {
+          '0%': { transform: 'translateX(-5px)', opacity: '0' }
+        }
       },
       screens: {
         "2xl": { max: "1535px" },
