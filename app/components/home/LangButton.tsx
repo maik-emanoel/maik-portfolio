@@ -119,6 +119,7 @@ export default function LangButton() {
               width={64}
               height={64}
               className="h-5 w-5"
+              priority
             />
             <span className="text-sm whitespace-nowrap">Português</span>
             {activeLang === "pt" && (
