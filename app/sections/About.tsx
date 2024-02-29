@@ -5,6 +5,7 @@ import ViewAllButton from "../components/about/ViewAllButton";
 
 export default function About() {
   const t = useTranslations("about");
+
   return (
     <Section
       id="about"
@@ -32,7 +33,7 @@ export default function About() {
               {t("second-subtitle")}
             </h3>
 
-            <ViewAllButton viewAllButtonTitle={t("view-all.view-all-button-title")} />
+            <ViewAllButton viewAllButtonTitle={t("view-all.view-all-button-title")} title={t("view-all.title")} />
           </div>
           <InfiniteSlider />
         </div>
