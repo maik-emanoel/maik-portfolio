@@ -71,7 +71,7 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
         key={tab.name}
         href={tab.path}
         data-istouchsupported={isTouchSupported}
-        className={`relative rounded-full px-4 py-[10px] sm:text-sm sm:px-2 sm:py-2 xs:text-xs ${
+        className={`relative rounded-full px-4 py-[10px] sm:text-sm sm:px-3 sm:py-2 xs:text-xs ${
           activeSection === tabPathWithoutHash ? "" : "data-[istouchsupported=false]:hover:bg-primary/5"
         } transition-colors duration-700`}
       >

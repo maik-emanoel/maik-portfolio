@@ -30,7 +30,7 @@ export default function ProjectCard({
         </h3>
 
         <div className="">
-          <p className="text-muted my-6">{repoInfos.description}</p>
+          <p className="text-muted my-6 md:my-3">{repoInfos.description}</p>
 
           <h4 className="mb-3 text-muted">{t.titleTopic}:</h4>
 
@@ -46,7 +46,7 @@ export default function ProjectCard({
           })}
         </div>
 
-        <div className="mt-auto flex flex-col gap-1 pb-4 w-fit md:mt-8">
+        <div className="mt-auto flex flex-col gap-1 pb-4 w-fit md:mt-6">
           <a
             href={repoInfos.html_url}
             target="_blank"
