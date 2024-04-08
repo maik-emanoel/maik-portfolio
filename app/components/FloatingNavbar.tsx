@@ -71,12 +71,9 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
         key={tab.name}
         href={tab.path}
         data-istouchsupported={isTouchSupported}
-        className={`relative rounded-full sm:text-sm sm:px-2 sm:py-2 xs:text-xs ${
+        className={`relative rounded-full px-4 py-[10px] sm:text-sm sm:px-2 sm:py-2 xs:text-xs ${
           activeSection === tabPathWithoutHash ? "" : "data-[istouchsupported=false]:hover:bg-primary/5"
         } transition-colors duration-700`}
-        style={{
-          padding: "0.65rem 0.75rem",
-        }}
       >
         {activeSection === tabPathWithoutHash && (
           <MagicTabSelect
@@ -94,7 +91,7 @@ export default function FloatingNavbar(props: FloatingNavbarProps) {
   return (
     <div
       data-isbottom={isBottom}
-      className="w-fit mx-auto flex items-center gap-3 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 px-4 py-2 rounded-full backdrop-blur-md bg-background dark:bg-slate-800/25 z-50 sm:gap-1 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-primary group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200 md:bottom-6 sm:data-[isbottom=true]:bottom-12 reveal-floatingNavbar"
+      className="w-fit mx-auto flex items-center gap-2 fixed left-1/2 -translate-x-1/2 bottom-8 border border-zinc-300 p-2 rounded-full backdrop-blur-md bg-background dark:bg-slate-800/25 z-50 sm:gap-1 data-[isbottom=true]:p-0 data-[isbottom=true]:hover:bg-primary group data-[isbottom=true]:transition-colors data-[isbottom=true]:duration-200 md:bottom-6 sm:data-[isbottom=true]:bottom-12 reveal-floatingNavbar"
       style={{
         boxShadow: "#00000040 0px 3px 8px",
       }}
