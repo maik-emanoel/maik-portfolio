@@ -2,7 +2,7 @@
 
 ![preview](./.github/preview.png)
 
-[Clique aqui para acessar](https://maik-emanoel.vercel.app/)
+[Click here to access](https://maik-emanoel.vercel.app/)
 
 <p>Case you want to see in pt-br, click in the link below:</p>
 
