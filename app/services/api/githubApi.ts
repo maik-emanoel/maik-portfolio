@@ -8,9 +8,7 @@ export async function fetchGithubRepos() {
         headers: {
           Authorization: `Bearer ${personalAccessToken}`,
         },
-        next: {
-          revalidate: 60,
-        },
+        cache: "no-store",
       }
     );
 
