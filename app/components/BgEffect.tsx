@@ -33,7 +33,7 @@ export default function BgEffect() {
 
   return (
     <span
-      className="w-[600px] h-[600px] fixed left-0 top-0 bg-slate-400/5 dark:bg-blue-500/10 blur-[100px] rounded-full pointer-events-none -z-[1]"
+      className="w-[600px] h-[600px] fixed left-0 top-0 bg-slate-400/10 dark:bg-blue-500/10 blur-[100px] rounded-full pointer-events-none -z-[1]"
       style={{
         transform: `translate(${position.x - elementSize / 2}px, ${position.y - elementSize / 2}px)`,
       }}
