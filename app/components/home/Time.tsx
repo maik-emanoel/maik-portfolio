@@ -1,6 +1,5 @@
 "use client";
 
-import { useMessages } from "next-intl";
 import { useState, useEffect } from "react";
 
 export default function Time() {
