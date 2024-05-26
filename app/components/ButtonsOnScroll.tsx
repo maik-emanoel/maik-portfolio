@@ -1,22 +1,18 @@
-"use client";
-
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import ThemeSwitcher from "./home/ThemeSwitcher";
 import Time from "./home/Time";
-import { HeaderButtonsProps } from "./home/HeaderButtons";
 import LangButton from "./home/LangButton";
 
-interface ButtonsOnScrollProps extends HeaderButtonsProps {
-  isActive: string | null;
-  setIsActive: Dispatch<SetStateAction<string | null>>;
+interface ButtonsOnScrollProps {
+  lightLabel: string;
+  darkLabel: string;
+  systemLabel: string;
 }
 
 export default function ButtonsOnScroll({
-  isActive,
-  setIsActive,
   lightLabel,
   darkLabel,
-  systemLabel
+  systemLabel,
 }: ButtonsOnScrollProps) {
   const [scrollValue, setScrollValue] = useState(0);
 
@@ -43,8 +39,6 @@ export default function ButtonsOnScroll({
       <span className="h-6 w-[1px] bg-slate-200 dark:bg-slate-500"></span>
       <LangButton />
       <ThemeSwitcher
-        isActive={isActive}
-        setIsActive={setIsActive}
         lightLabel={lightLabel}
         darkLabel={darkLabel}
         systemLabel={systemLabel}

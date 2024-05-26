@@ -2,7 +2,6 @@
 
 import ThemeSwitcher from "./ThemeSwitcher";
 import Time from "./Time";
-import { useState } from "react";
 import ButtonsOnScroll from "../ButtonsOnScroll";
 import LangButton from "./LangButton";
 
@@ -14,7 +13,6 @@ export interface HeaderButtonsProps {
 
 export default function HeaderButtons(props: HeaderButtonsProps) {
   const { lightLabel, darkLabel, systemLabel } = props;
-  const [isActive, setIsActive] = useState<string | null>(null);
 
   return (
     <>
@@ -28,8 +26,6 @@ export default function HeaderButtons(props: HeaderButtonsProps) {
         ></span>
         <LangButton />
         <ThemeSwitcher
-          isActive={isActive}
-          setIsActive={setIsActive}
           lightLabel={lightLabel}
           darkLabel={darkLabel}
           systemLabel={systemLabel}
@@ -37,8 +33,6 @@ export default function HeaderButtons(props: HeaderButtonsProps) {
       </div>
 
       <ButtonsOnScroll
-        isActive={isActive}
-        setIsActive={setIsActive}
         lightLabel={lightLabel}
         darkLabel={darkLabel}
         systemLabel={systemLabel}

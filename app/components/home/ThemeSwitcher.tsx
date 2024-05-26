@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Moon,
   Sun,
@@ -8,28 +6,29 @@ import {
   IconProps,
   CircleNotch,
 } from "@phosphor-icons/react";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { HeaderButtonsProps } from "./HeaderButtons";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { useIsTouchSupported } from "@/app/utils/touchUtils";
+import { useSynchronizeContext } from "@/app/contexts/synchronizeContext";
 
-interface ThemeSwitcherProps extends HeaderButtonsProps {
-  isActive: string | null;
-  setIsActive: Dispatch<SetStateAction<string | null>>;
+interface ThemeSwitcherProps {
+  lightLabel: string;
+  darkLabel: string;
+  systemLabel: string;
 }
 
 export default function ThemeSwitcher({
-  isActive,
-  setIsActive,
   lightLabel,
   darkLabel,
   systemLabel,
 }: ThemeSwitcherProps) {
+  const { isActive, setIsActive } = useSynchronizeContext();
+
   const [showOptions, setShowOptions] = useState<null | boolean>(null);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const themeOptionsRef = useRef<HTMLDivElement | null>(null);
-  const isTouchSupported = useIsTouchSupported()
+  const isTouchSupported = useIsTouchSupported();
 
   useEffect(() => setMounted(true), []);
 
@@ -39,7 +38,7 @@ export default function ThemeSwitcher({
 
   useEffect(() => {
     function handleClickOutsideShowOptions(e: MouseEvent) {
-      if (isTouchSupported) return setShowOptions(false)
+      if (isTouchSupported) return setShowOptions(false);
 
       if (
         themeOptionsRef.current &&
@@ -105,7 +104,9 @@ export default function ThemeSwitcher({
         <div
           ref={themeOptionsRef}
           className={`absolute top-12 right-0 z-50 bg-background/60 backdrop-blur-lg shadow-lg overflow-hidden ${
-            showOptions ? "flex animate-fadeIn" : "animate-fadeOut pointer-events-none"
+            showOptions
+              ? "flex animate-fadeIn"
+              : "animate-fadeOut pointer-events-none"
           } flex-col border border-slate-200 dark:border-slate-500 rounded-lg`}
         >
           <ThemeButton
