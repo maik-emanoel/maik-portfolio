@@ -2,6 +2,7 @@ import {
   FaHtml5 as htmlLogo,
   FaReact as reactLogo,
   FaGitAlt as gitLogo,
+  FaNodeJs as nodeLogo
 } from "react-icons/fa";
 import {
   IoLogoCss3 as cssLogo,
@@ -10,7 +11,6 @@ import {
 import { IoLogoJavascript as javascriptLogo } from "react-icons/io5";
 import {
   BiLogoTypescript as typescriptLogo,
-  BiLogoVisualStudio as vscodeLogo,
   BiLogoPostgresql as postgresLogo
 } from "react-icons/bi";
 import {
@@ -47,6 +47,10 @@ export const logos = [
   {
     image: tailwindLogo,
     name: "Tailwind CSS",
+  },
+  {
+    image: nodeLogo,
+    name: 'Node.js'
   },
   {
     image: prismaLogo,
