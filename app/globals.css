@@ -50,7 +50,7 @@
 
 @layer utilities {
   .h-screen-mobile {
-    height: 100dvh;
+    min-height: 100dvh;
   }
 
   .animation-paused {
@@ -111,7 +111,7 @@
   }
 
   html.dark::-webkit-scrollbar-thumb {
-    background: rgba(96, 165, 250, .2);
+    background: rgba(96, 165, 250, 0.2);
     border-radius: 999px;
   }
 
