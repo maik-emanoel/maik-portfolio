@@ -4,10 +4,10 @@ import { useIsTouchSupported } from "@/app/utils/touchUtils";
 import { logos } from "@/app/lib/about-logos";
 
 const before =
-  "before:absolute before:top-0 before:left-0 before:w-[15%] before:h-full before:bg-[linear-gradient(to_left,_transparent,_#fff)] before:dark:bg-[linear-gradient(to_left,_transparent,_#0f172a)] before:z-10";
+  "before:absolute before:top-0 before:left-0 before:w-[15%] before:h-full before:bg-[linear-gradient(to_left,_transparent,_#f8fafc)] before:dark:bg-[linear-gradient(to_left,_transparent,_#0f172a)] before:z-10";
 
 const after =
-  "after:absolute after:top-0 after:right-0 after:w-[15%] after:h-full after:bg-[linear-gradient(to_right,_transparent,_#fff)] after:dark:bg-[linear-gradient(to_right,_transparent,_#0f172a)] after:z-10";
+  "after:absolute after:top-0 after:right-0 after:w-[15%] after:h-full after:bg-[linear-gradient(to_right,_transparent,_#f8fafc)] after:dark:bg-[linear-gradient(to_right,_transparent,_#0f172a)] after:z-10";
 
 export default function InfiniteSlider() {
   const isTouchSupported = useIsTouchSupported();
