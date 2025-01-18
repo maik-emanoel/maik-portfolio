@@ -1,38 +1,38 @@
+import Header from '../components/home/Header'
+import IntroTitle from '../components/home/IntroTitle'
+import Image from 'next/image'
+import { Icon } from '@phosphor-icons/react/dist/lib/index'
+import { useTranslations } from 'next-intl'
 import {
   CaretDown,
   DownloadSimple,
   GithubLogo,
-} from "@phosphor-icons/react/dist/ssr";
-import Header from "../components/home/Header";
-import IntroTitle from "../components/home/IntroTitle";
-import Image from "next/image";
-import { Icon } from "@phosphor-icons/react/dist/lib/index";
-import { useTranslations } from "next-intl";
+} from '@phosphor-icons/react/dist/ssr'
 
 export default function Home() {
-  const t = useTranslations("home")
+  const t = useTranslations('home')
 
   return (
     <div
-      className="h-screen max-h-[768px] flex flex-col relative sm:h-screen-mobile"
+      className="h-screen flex flex-col relative sm:h-screen-mobile"
       id="home"
       data-section="home"
     >
       <Header />
 
-      <main className="flex-1 max-h-[500px] flex items-center justify-between md:flex-col-reverse md:justify-center md:gap-6">
+      <main className="flex-1 flex items-center justify-between md:flex-col-reverse md:justify-center md:gap-6 max-h-[calc(100vh-150px)]">
         <div>
           <IntroTitle />
 
           <div
             className="mt-4 flex items-center gap-2 animate-reveal"
             style={{
-              animationDelay: "1300ms",
+              animationDelay: '1300ms',
             }}
           >
             <LinkButton
               icon={DownloadSimple}
-              text={`${t("download-button")} CV`}
+              text={`${t('download-button')} CV`}
               path="/curriculo-maik-dev.pdf"
               isDownloadButton
             />
@@ -44,9 +44,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div
-          className="w-[300px] h-[300px] p-3 rounded-full relative overflow-hidden md:w-52 md:h-52 animate-[reveal_.6s_backwards_2000ms] md:animate-[reveal_.6s_backwards_600ms]"
-        >
+        <div className="w-[300px] h-[300px] p-3 rounded-full relative overflow-hidden md:w-52 md:h-52 animate-[reveal_.6s_backwards_2000ms] md:animate-[reveal_.6s_backwards_600ms]">
           <Image
             src="/profile-photo.jpg"
             width={868}
@@ -55,7 +53,7 @@ export default function Home() {
             priority
             className="w-full h-full rounded-full object-cover"
             style={{
-              objectPosition: '0 -20px'
+              objectPosition: '0 -20px',
             }}
           />
 
@@ -65,14 +63,14 @@ export default function Home() {
         <CaretDown className="hidden sm:block absolute left-1/2 -translate-x-[50%] bottom-[15%] animate-scrollBounce" />
       </main>
     </div>
-  );
+  )
 }
 
 interface LinkButtonsProps {
-  icon: Icon;
-  text: string;
-  path: string;
-  isDownloadButton?: boolean;
+  icon: Icon
+  text: string
+  path: string
+  isDownloadButton?: boolean
 }
 
 function LinkButton({
@@ -85,7 +83,7 @@ function LinkButton({
     <a
       className="h-10 w-10 max-w-[150px] rounded-full border border-blue-primary flex items-center gap-2 px-[10px] hover:w-full group transition-[width] duration-500 overflow-hidden cursor-pointer"
       href={path}
-      download={isDownloadButton && "cv-maikemanoel"}
+      download={isDownloadButton && 'cv-maikemanoel'}
       target="_blank"
     >
       <Icon size={20} className="flex-shrink-0" />
@@ -93,5 +91,5 @@ function LinkButton({
         {text}
       </span>
     </a>
-  );
+  )
 }
