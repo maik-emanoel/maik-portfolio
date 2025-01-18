@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUp } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
 import { MagicTabSelect } from "react-magic-motion";
 import { useIsTouchSupported } from "../utils/touchUtils";
