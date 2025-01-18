@@ -16,7 +16,9 @@ import {
 import {
   SiNextdotjs as nextjsLogo,
   SiTailwindcss as tailwindLogo,
-  SiPrisma as prismaLogo
+  SiPrisma as prismaLogo,
+  SiNestjs as nestjsLogo,
+  SiTypeorm as typeormLogo
 } from "react-icons/si";
 
 export const logos = [
@@ -59,6 +61,14 @@ export const logos = [
   {
     image: postgresLogo,
     name: "PostgreSQL"
+  },
+  {
+    image: nestjsLogo,
+    name: "Nest.js"
+  },
+  {
+    image: typeormLogo,
+    name: "TypeORM"
   },
   {
     image: githubLogo,
