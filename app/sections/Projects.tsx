@@ -1,30 +1,15 @@
-import { getTranslations } from 'next-intl/server'
 import ProjectsContent from '../components/projects/ProjectsContent'
 import Section from '../components/Section'
-import { fetchGithubRepos, fetchReadmeImage } from '../services/api/githubApi'
+import { useTranslations } from 'next-intl'
 
-export default async function Projects() {
-  const t = await getTranslations('projects')
+export default function Projects() {
+  const t = useTranslations('projects')
 
   const projectCardLabels = {
     titleTopic: t('title-topic'),
     firstLink: t('first-link'),
     secondLink: t('second-link'),
   }
-
-  const data = await fetchGithubRepos()
-
-  const reposFiltered = data.filter((repo: any) => repo.topics.includes('mk'))
-
-  const reposWithImage = await Promise.all(
-    reposFiltered.map(async (repoFiltered: any) => {
-      try {
-        return await fetchReadmeImage(repoFiltered)
-      } catch (error) {
-        console.log('Failed to fetch data', error)
-      }
-    })
-  )
 
   return (
     <Section
@@ -33,7 +18,7 @@ export default async function Projects() {
       id="projects"
       className="sm:h-svh"
     >
-      <ProjectsContent reposWithImage={reposWithImage} t={projectCardLabels} />
+      <ProjectsContent t={projectCardLabels} />
     </Section>
   )
 }
