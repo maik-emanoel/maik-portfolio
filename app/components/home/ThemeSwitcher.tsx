@@ -70,7 +70,7 @@ export default function ThemeSwitcher({
   if (!mounted) {
     return (
       <div
-        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10 animate-reveal"
+        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10 animate-reveal flex-shrink-0"
         style={{
           animationDelay: "600ms",
         }}
@@ -92,7 +92,7 @@ export default function ThemeSwitcher({
   return (
     <>
       <div
-        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10"
+        className="text-primary rounded-full border border-slate-200 dark:border-muted h-7 w-7 grid place-items-center cursor-pointer hover:bg-primary/10 flex-shrink-0"
         onClick={handleShowOptions}
       >
         {theme === "light" && <Sun size={20} />}
