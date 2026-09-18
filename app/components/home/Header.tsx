@@ -6,14 +6,14 @@ export default function Header() {
   const t = useTranslations("themeOptions")
 
   return (
-    <header className="py-5 flex items-center justify-between h-20">
-      <div className="animate-reveal">
+    <header className="py-5 flex items-center justify-between h-20 gap-3">
+      <div className="animate-reveal max-w-36 w-full">
         <Image
           src="/logo.png"
           alt=""
           width={1500}
           height={156}
-          className="w-36 object-cover my-2 hidden dark:inline-block"
+          className="w-full object-cover my-2 hidden dark:inline-block"
           priority
         />
         <Image
@@ -21,7 +21,7 @@ export default function Header() {
           alt=""
           width={1500}
           height={156}
-          className="w-36 object-cover my-2 inline-block dark:hidden"
+          className="w-full object-cover my-2 inline-block dark:hidden"
           priority
         />
       </div>
