@@ -31,7 +31,7 @@ export default function Time() {
   
   return (
     <div
-      className="text-xs text-terciary flex items-center gap-1 cursor-default animate-reveal"
+      className="text-xs text-terciary flex items-center gap-1.5 cursor-default animate-reveal"
       style={{
         animationDelay: "150ms",
       }}
