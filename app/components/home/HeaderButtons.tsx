@@ -16,10 +16,10 @@ export default function HeaderButtons(props: HeaderButtonsProps) {
 
   return (
     <>
-      <div className="flex items-center gap-2 relative">
+      <div className="flex items-center gap-3 relative">
         <Time />
         <span
-          className="h-6 w-[1px] bg-slate-200 dark:bg-slate-500 animate-reveal"
+          className="h-6 w-[1px] bg-slate-200 dark:bg-slate-500 animate-reveal flex-shrink-0"
           style={{
             animationDelay: "300ms",
           }}

@@ -29,7 +29,7 @@ export default function ButtonsOnScroll({
 
   return (
     <div
-      className={`flex items-center gap-2 fixed ${
+      className={`flex items-center gap-3 fixed ${
         isScrollDown
           ? "top-4 translate-y-0"
           : "top-0 -translate-y-full opacity-30 overflow-hidden"
